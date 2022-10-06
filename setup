@@ -20,8 +20,8 @@ if [ $uname == "MINGW" ]; then
     cp files/.gitconfig $HOME
 else
     echo "Creating symlink for .bashrc"
-    ls -s files/.bashrc $HOME
+    ls -s files/.bashrc $HOME/.bashrc
     
     echo "Creating symlink for .gitconfig"
-    ls -s files/.gitconfig $HOME
+    ls -s files/.gitconfig $HOME/.gitconfig
 fi
