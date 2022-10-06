@@ -1,1 +1,1 @@
-`git clone https://github.com/alexthemaster/dotfiles && ./dotfiles/setup` (bash only - works on windows and linux)
+`git clone https://github.com/alexthemaster/dotfiles && chmod +x ./dotfiles/setup && ./dotfiles/setup` (bash only - works on windows and linux)

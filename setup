@@ -14,14 +14,14 @@ curl -sS https://starship.rs/install.sh | sh -s -- --yes --bin-dir $bin
 
 if [ $uname == "MINGW" ]; then
     echo "Copying .bashrc to user directory"
-    cp files/.bashrc $HOME
+    cp ./files/.bashrc $HOME
     
     echo "Copying .gitconfig to user directory"
-    cp files/.gitconfig $HOME
+    cp ./files/.gitconfig $HOME
 else
     echo "Creating symlink for .bashrc"
-    ls -s files/.bashrc $HOME
+    ls -s ./files/.bashrc $HOME
     
     echo "Creating symlink for .gitconfig"
-    ls -s files/.gitconfig $HOME
+    ls -s ./files/.gitconfig $HOME
 fi
