@@ -1,7 +1,8 @@
 eval "$(starship init bash)"
 
 alias ga="git add ."
-alias gac="ga && git commit -m "
+alias gc="git commit -m "
+alias gac="ga && gc"
 alias gp="git push"
 alias gy='gac "$(curl --silent --fail http://whatthecommit.com/index.txt)"'
 alias gyp="gy && gp"
