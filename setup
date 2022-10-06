@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+uname=$(expr substr $(uname -s) 1 5)
+bin="/usr/local/bin"
+
+# check if we're running on windows
+if [ $uname == "MINGW" ]; then
+    bin="$HOME/.local/bin"
+fi
+
+mkdir -p $bin
+
+echo "Installing starship.rs (🚀 blazing fast)"
+curl -sS https://starship.rs/install.sh | sh -s -- --yes --bin-dir $bin
+
+if [ $uname == "MINGW" ]; then
+    echo "Copying .gitconfig to user directory"
+    cp files/.gitconfig $HOME
+else
+    echo "Creating symlink for .gitconfig"
+    ls -s files/.gitconfig $HOME
+fi
+
+if [ $uname == "MINGW" ]; then
+    echo "Copying .bashrc to user directory"
+    cp files/.bashrc $HOME
+else
+    echo "Creating symlink for .bashrc"
+    ls -s files/.bashrc $HOME
+fi

@@ -1,0 +1,7 @@
+[user]
+	name = Alex Kovacs
+	email = alexdemaster@proton.me
+[core]
+	editor = "vscode"
+[help]
+	autocorrect = 20
