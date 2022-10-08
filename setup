@@ -1,16 +1,13 @@
 #!/usr/bin/env bash
 
 uname=$(expr substr $(uname -s) 1 5)
-bin="/usr/local/bin"
-
-if [ $uname == "MINGW" ]; then
-    bin="$HOME/.local/bin"
-fi
-
-mkdir -p $bin
 
 echo "Installing starship.rs (🚀 blazing fast)"
-curl -sS https://starship.rs/install.sh | sh -s -- --yes --bin-dir $bin
+if [ $uname == "MINGW" ]; then
+    powershell 'winget install --id Starship.Starship'
+else
+    curl -sS https://starship.rs/install.sh | sh -s -- --yes
+fi
 
 echo "Copying .bashrc to user directory"
 cp files/.bashrc $HOME
