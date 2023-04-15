@@ -163,7 +163,7 @@ bar {
 exec --no-startup-id nitrogen --restore
 
 # Autotiling
-exec_always -no-startup-id autotiling
+exec_always --no-startup-id autotiling
 
 # Start picom
 exec_always --no-startup-id picom -b
