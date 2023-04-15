@@ -24,9 +24,9 @@ color=white
 full_text=Shutdown
 command=systemctl shutdown
 
-[restart]
+[reboot]
 full_text=Restart
-command=systemctl restart
+command=systemctl reboot
 
 [sleep]
 full_text=Sleep
