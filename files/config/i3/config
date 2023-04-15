@@ -155,7 +155,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bar {
-    status_command i3status
+    status_command i3blocks
     position top
 }
 
@@ -164,6 +164,8 @@ bar {
 exec_always systemctl stop pulseaudio.socket
 exec_always systemctl stop pulseaudio.service
 exec_always pulseaudio
+
+exec_always autotiling
 
 # Start picom
 exec picom -b
@@ -180,3 +182,4 @@ gaps inner 5
 bindsym --release Print exec flameshot gui --clipboard
 bindsym --release Control+Print exec flameshot full --clipboard
 
+bindsym XF86AudioPlay exec playerctl play-pause

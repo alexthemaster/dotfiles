@@ -24,4 +24,4 @@ ln -sf $PWD/files/.gitconfig $HOME
 
 echo "Symlink i3 directories"
 ln -sf $PWD/files/config/i3 $HOME/.config/i3
-ln -sf $PWD/files/config/i3status $HOME/.config/i3status
+ln -sf $PWD/files/config/i3blocks $HOME/.config/i3blocks

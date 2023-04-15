@@ -1,0 +1,33 @@
+# Hourly weather
+[weather]
+command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
+interval=3600
+
+[ip]
+command=hostname -i | awk '{ print "IP:" $1 }'
+interval=once
+
+[now-playing]
+command=scripts/nowPlaying
+interval=repeat
+
+[volume]
+command=pactl get-sink-volume 2 | awk '{ print "Volume: " $5 }' 
+interval=1
+
+[time]
+command=date +%T
+interval=1
+color=white
+
+[shutdown]
+full_text=Shutdown
+command=systemctl shutdown
+
+[restart]
+full_text=Restart
+command=systemctl restart
+
+[sleep]
+full_text=Sleep
+command=systemctl suspend
