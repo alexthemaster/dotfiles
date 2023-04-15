@@ -176,3 +176,7 @@ smart_borders on
 
 gaps inner 5
 
+# Flameshot
+bindsym --release Print exec flameshot gui --clipboard
+bindsym --release Control+Print exec flameshot full --clipboard
+
