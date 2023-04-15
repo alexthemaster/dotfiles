@@ -22,7 +22,7 @@ color=white
 
 [shutdown]
 full_text=Shutdown
-command=systemctl shutdown
+command=systemctl poweroff
 
 [reboot]
 full_text=Restart
