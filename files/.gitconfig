@@ -5,3 +5,5 @@
 	editor = "code"
 [help]
 	autocorrect = 20
+[safe]
+	directory = /mnt/250gb/Programming/Other/dotfiles

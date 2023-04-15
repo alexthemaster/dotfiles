@@ -2,15 +2,26 @@
 
 uname=$(expr substr $(uname -s) 1 5)
 
-echo "Installing starship.rs (🚀 blazing fast)"
+
 if [ $uname == "MINGW" ]; then
+    echo "Installing starship.rs (🚀 blazing fast)"
     powershell 'winget install --id Starship.Starship'
-else
-    curl -sS https://starship.rs/install.sh | sh -s -- --yes
+    echo "Copying .bashrc to user directory"
+    cp files/.bashrc $HOME
+    
+    echo "Copying .gitconfig to user directory"
+    cp files/.gitconfig $HOME
 fi
 
-echo "Copying .bashrc to user directory"
-cp files/.bashrc $HOME
+echo "Installing starship.rs (🚀 blazing fast)"
+curl -sS https://starship.rs/install.sh | sh -s -- --yes
 
-echo "Copying .gitconfig to user directory"
-cp files/.gitconfig $HOME
+echo "Symlink .bashrc to user directory"
+ln -sf $PWD/files/.bashrc $HOME
+
+echo "Symlink .gitconfig to user directory"
+ln -sf $PWD/files/.gitconfig $HOME
+
+echo "Symlink i3 directories"
+ln -sf $PWD/files/config/i3 $HOME/.config/i3
+ln -sf $PWD/files/config/i3status $HOME/.config/i3status
