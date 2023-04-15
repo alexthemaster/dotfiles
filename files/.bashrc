@@ -1,4 +1,5 @@
 eval "$(starship init bash)"
+neofetch
 
 alias ga="git add ."
 alias gc="git commit -m "

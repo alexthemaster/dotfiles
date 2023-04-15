@@ -194,6 +194,9 @@ exec_always systemctl stop pulseaudio.socket
 exec_always systemctl stop pulseaudio.service
 exec_always pulseaudio
 
+# Start picom
+exec picom -b
+
 focus_follows_mouse no
 
 title_align center
