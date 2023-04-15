@@ -159,16 +159,14 @@ bar {
     position top
 }
 
+# Restore wallpaper
+exec --no-startup-id nitrogen --restore
 
-# Start pulseaudio
-exec_always systemctl stop pulseaudio.socket
-exec_always systemctl stop pulseaudio.service
-exec_always pulseaudio
-
-exec_always autotiling
+# Autotiling
+exec_always -no-startup-id autotiling
 
 # Start picom
-exec picom -b
+exec_always --no-startup-id picom -b
 
 focus_follows_mouse no
 
@@ -182,4 +180,4 @@ gaps inner 5
 bindsym --release Print exec flameshot gui --clipboard
 bindsym --release Control+Print exec flameshot full --clipboard
 
-bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPlay exec -no-startup-id playerctl play-pause

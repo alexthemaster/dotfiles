@@ -12,7 +12,7 @@ command=scripts/nowPlaying
 interval=repeat
 
 [volume]
-command=pactl get-sink-volume 2 | awk '{ print "Volume: " $5 }' 
+command=echo "Volume: $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2 * 100}')%" 
 interval=1
 
 [time]
