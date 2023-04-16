@@ -168,6 +168,9 @@ exec_always --no-startup-id autotiling
 # Start picom
 exec_always --no-startup-id picom -b
 
+# Start easyeffects service
+exec_always --no-startup-id easyeffects --gapplication-service
+
 focus_follows_mouse no
 
 title_align center
