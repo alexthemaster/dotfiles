@@ -188,6 +188,6 @@ assign [class="Steam"] 4
 for_window [class="Spotify"] move to workspace 2
 assign [class="Code"] 3
 
-# Open popups in floating windows - https://wiki.archlinux.org/title/I3#Correct_handling_of_floating_dialogs
+# Open floating for popup windows - https://wiki.archlinux.org/title/I3#Correct_handling_of_floating_dialogs
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
