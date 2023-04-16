@@ -184,6 +184,7 @@ bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 
 # Open specific windows on specific workspaces
 assign [class="discord"] 2
+assign [class="Steam"] 4
 for_window [class="Spotify"] move to workspace 2
 assign [class="Code"] 3
 
