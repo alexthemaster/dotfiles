@@ -22,12 +22,16 @@ color=white
 
 [shutdown]
 full_text=Shutdown
-command=systemctl poweroff
+command=terminator -e scripts/shutdown
 
 [reboot]
 full_text=Restart
-command=systemctl reboot
+command=terminator -e scripts/restart
 
 [sleep]
-full_text=Sleep
-command=systemctl suspend
+full_text="Sleep"
+command=terminator -e scripts/sleep
+
+# Needed to be able to click the buttons
+[space]
+full_text=" "
