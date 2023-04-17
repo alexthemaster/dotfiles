@@ -16,7 +16,7 @@ command=echo "Volume: $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2 *
 interval=1
 
 [time]
-command=date +%T
+command=date +"%T %d/%m/%Y"
 interval=1
 color=white
 
