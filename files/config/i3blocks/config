@@ -4,7 +4,7 @@ command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
 interval=3600
 
 [ip]
-command=hostname -i | awk '{ print "IP:" $1 }'
+command=hostname -i | awk '{ print "IP: " $1 }'
 interval=once
 
 [now-playing]
@@ -18,20 +18,19 @@ interval=1
 [time]
 command=date +"%T %d/%m/%Y"
 interval=1
-color=white
 
 [shutdown]
-full_text=Shutdown
+full_text=🛑 Shutdown
 command=terminator -e scripts/shutdown
 
 [reboot]
-full_text=Restart
+full_text=🔃 Restart
 command=terminator -e scripts/restart
 
 [sleep]
-full_text="Sleep"
+full_text=🌙 Sleep
 command=terminator -e scripts/sleep
 
-# Needed to be able to click the buttons
-[space]
-full_text=" "
+[separator]
+full_text=""
+interval=once

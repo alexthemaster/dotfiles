@@ -6,7 +6,7 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:firacode-nerd 9
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -170,6 +170,9 @@ exec_always --no-startup-id picom -b
 
 # Start easyeffects service
 exec_always --no-startup-id easyeffects --gapplication-service
+
+# Alt-Tab like behavior
+bindsym $mod+Tab workspace back_and_forth
 
 focus_follows_mouse no
 
