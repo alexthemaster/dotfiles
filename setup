@@ -11,6 +11,8 @@ if [ $uname == "MINGW" ]; then
     
     echo "Copying .gitconfig to user directory"
     cp files/.gitconfig $HOME
+
+    exit 0
 fi
 
 echo "Installing starship.rs (🚀 blazing fast)"
