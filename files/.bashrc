@@ -13,6 +13,7 @@ alias yt-mp3="ytdl --extract-audio --audio-format mp3"
 alias yt-mp4="ytdl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4'"
 alias ytmp3="yt-mp3"
 alias ytmp4="yt-mp4"
+alias ls="ls --color=auto"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
