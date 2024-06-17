@@ -19,11 +19,11 @@ echo "Installing starship.rs (🚀 blazing fast)"
 curl -sS https://starship.rs/install.sh | sh -s -- --yes
 
 echo "Symlink .bashrc to user directory"
-ln -sf $PWD/files/.bashrc $HOME
+ln -sf "$PWD/files/.bashrc" $HOME
 
 echo "Symlink .gitconfig to user directory"
-ln -sf $PWD/files/.gitconfig $HOME
+ln -sf "$PWD/files/.gitconfig" $HOME
 
 echo "Symlink i3 directories"
-ln -sf $PWD/files/config/i3 $HOME/.config/i3
-ln -sf $PWD/files/config/i3blocks $HOME/.config/i3blocks
+ln -sf "$PWD/files/config/i3" $HOME/.config/i3
+ln -sf "$PWD/files/config/i3blocks" $HOME/.config/i3blocks

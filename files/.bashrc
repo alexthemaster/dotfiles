@@ -1,5 +1,5 @@
 eval "$(starship init bash)"
-neofetch
+fastfetch || neofetch
 
 # Git related aliasees
 alias ga="git add ."
