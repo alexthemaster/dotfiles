@@ -1,0 +1,5 @@
+theme: dark
+layout:
+  Media:
+    style: row
+    columns: 4

@@ -1,0 +1,57 @@
+- Media:
+    - Jellyfin:
+        icon: https://static-00.iconduck.com/assets.00/jellyfin-icon-1024x1024-udvadsvh.png
+        href: http://server.local:8096
+        server: server
+        container: jellyfin
+        widget:
+          type: jellyfin
+          url: http://localhost:8096
+          key: apikey
+          fields: ["movies", "series", "episodes"]
+          enableBlocks: true
+          enableUser: true
+          showEpisodeNumber: true
+    - qBittorrent:
+        icon: https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/New_qBittorrent_Logo.svg/2048px-New_qBittorrent_Logo.svg.png
+        href: http://server.local:8080
+        server: server
+        container: qbittorrent
+        widget:
+          type: qbittorrent
+          url: http://qbittorrent:8080
+          username: username
+          password: password
+    - Sonarr:
+        icon: https://avatars.githubusercontent.com/u/1082903?s=280&v=4
+        href: http://server.local:8989
+        server: server
+        container: sonarr
+        widget:
+          type: sonarr
+          url: http://sonarr:8989
+          key: apikey
+    - Radarr:
+        icon: https://getumbrel.github.io/umbrel-apps-gallery/radarr/icon.svg
+        href: http://server.local:7878
+        server: server
+        container: radarr
+        widget:
+          type: radarr
+          url: http://radarr:7878
+          key: apikey
+    - Jackett:
+        icon: https://styles.redditmedia.com/t5_3e9ey/styles/communityIcon_vouv833bm3g31.png
+        href: http://server.local:9117
+        server: server
+        container: jackett
+        widget:
+          type: jackett
+          url: http://jackett:9117
+          apikey: apikey
+- Util:
+    - Portainer:
+        icon: https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_200,h_200/https://api.charmhub.io/api/v1/media/download/charm_Owpj9CsDEMZwVtup3ZTxxs0FtyvDqb2o_icon_5cef79c2d18f67464f39c8f2cf2d7ebb815b0071f04d3ffbb94f49fddd3ab666.png
+        href: http://server.local:9443
+        server: server
+        container: portainer
