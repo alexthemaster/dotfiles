@@ -1,0 +1,37 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/service-widgets
+
+- resources:
+    cpu: true
+    memory: true
+    disk:
+      - /
+      - /HDD
+    expanded: true
+    diskUnits: bytes
+    cputemp: true
+    tempmin: 0 #  minimum cpu temp
+    tempmax: 100 # maximum cpu temp
+    units: metric
+    refresh: 3000
+    uptime: true
+
+- search:
+    provider: google
+    focus: true
+    showSearchSuggestions: true
+    target: _blank
+
+- datetime:
+    text_size: 4x1
+    format:
+      dateStyle: long
+      timeStyle: short
+
+- openmeteo:
+    timezone: Europe/Bucharest
+    units: metric
+    cache: 5
+    format:
+      maximumFractionDigits: 1

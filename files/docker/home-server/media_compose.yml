@@ -1,32 +1,5 @@
 name: Media
 services:
-  # Needed for homepage
-  dockerproxy:
-    image: ghcr.io/tecnativa/docker-socket-proxy:latest
-    container_name: dockerproxy
-    environment:
-      - CONTAINERS=1 # Allow access to viewing containers
-      - SERVICES=1 # Allow access to viewing services (necessary when using Docker Swarm)
-      - TASKS=1 # Allow access to viewing tasks (necessary when using Docker Swarm)
-      - POST=0 # Disallow any POST operations (effectively read-only)
-    ports:
-      - 127.0.0.1:2375:2375
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro # Mounted as read-only
-    restart: unless-stopped
-
-  homepage:
-    image: ghcr.io/gethomepage/homepage:latest
-    container_name: homepage
-    environment:
-      PUID: 1000
-      PGID: 1000
-    ports:
-      - 80:3000
-    volumes:
-      - /home/alex/dotfiles/files/docker/homepage:/app/config
-    restart: always
-
   jellyfin:
     image: linuxserver/jellyfin:latest
     container_name: jellyfin
@@ -61,8 +34,8 @@ services:
     image: flaresolverr/flaresolverr:latest
     container_name: flaresolverr
     ports:
-      - "8191:8191"
-    restart: always 
+      - 8191:8191
+    restart: always
 
   jackett:
     image: linuxserver/jackett:latest
@@ -76,7 +49,7 @@ services:
       - /mnt/HDD/:/downloads
     ports:
       - 9117:9117
-    restart: unless-stopped
+    restart: always
     depends_on:
       - flaresolverr
 

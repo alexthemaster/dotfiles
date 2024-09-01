@@ -1,0 +1,32 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/bookmarks
+
+- Piracy:
+    - TorrentLeech:
+        - icon: https://www.torrentleech.org/images/Tl_logo-White.png
+          href: https://torrentleech.org/
+    - FileList:
+        - icon: https://filelist.io/styles/images/logo_wood.png
+          href: https://filelist.io/index.php
+    - cs.rin.ru:
+        - icon: https://www.userlogos.org/files/logos/jumpordie/csrinru_01.png
+          href: https://cs.rin.ru/forum/
+    - 1337x:
+        - icon: https://1337x.to/images/logo.svg
+          href: https://1337x.to/
+
+- Developer:
+    - Github:
+        - icon: https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png
+          href: https://github.com/
+
+- Social:
+    - Reddit:
+        - icon: https://www.iconpacks.net/icons/2/free-reddit-logo-icon-2436-thumb.png
+          href: https://reddit.com/
+
+- Entertainment:
+    - YouTube:
+        - icon: https://cdn-icons-png.flaticon.com/512/1384/1384060.png
+          href: https://youtube.com/

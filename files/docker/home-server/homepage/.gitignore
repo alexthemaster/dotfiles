@@ -1,0 +1,7 @@
+*
+!docker.yaml
+!widgets.yaml
+!bookmarks.yaml
+!settings.yaml
+!example_services.yaml
+!.gitignore
