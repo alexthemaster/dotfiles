@@ -25,3 +25,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Bash autocomplete
 source /etc/profile.d/bash_completion.sh
+
+# Created by `pipx` on 2024-09-01 20:42:19
+export PATH="$PATH:/home/alex/.local/bin"
