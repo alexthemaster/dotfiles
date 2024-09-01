@@ -1,17 +1,17 @@
 name: Media
 services:
-  jellyfin:
-    image: linuxserver/jellyfin:latest
-    container_name: jellyfin
-    # Needed for DLNA to work
+  plex:
+    image: linuxserver/plex:latest
+    container_name: plex
     network_mode: host
     environment:
       - PUID=1000
       - PGID=1000
+      - VERSION=docker
     volumes:
-      - jellyfin:/config
-      - /mnt/HDD/Sorted/TV Shows/:/data/tvshows
-      - /mnt/HDD/Sorted/Movies:/data/movies
+      - plex:/config
+      - /mnt/HDD/Sorted/TV Shows/:/tv
+      - /mnt/HDD/Sorted/Movies:/movies
     restart: always
 
   qbittorrent:
@@ -92,4 +92,4 @@ volumes:
   sonarr:
   radarr:
   jackett:
-  jellyfin:
+  plex:

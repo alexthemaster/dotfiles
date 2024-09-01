@@ -1,17 +1,13 @@
 - Media:
-    - Jellyfin:
-        icon: https://static-00.iconduck.com/assets.00/jellyfin-icon-1024x1024-udvadsvh.png
-        href: http://server.local:8096
+    - Plex:
+        icon: https://static-00.iconduck.com/assets.00/plex-icon-2048x2048-kdgfrhh9.png
+        href: http://server.local:32400
         server: server
-        container: jellyfin
+        container: plex
         widget:
-          type: jellyfin
-          url: http://localhost:8096
-          key: apikey
-          fields: ["movies", "series", "episodes"]
-          enableBlocks: true
-          enableUser: true
-          showEpisodeNumber: true
+          type: plex
+          url: http://localhost:32400
+          key: token # see https://www.plexopedia.com/plex-media-server/general/plex-token/
     - qBittorrent:
         icon: https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/New_qBittorrent_Logo.svg/2048px-New_qBittorrent_Logo.svg.png
         href: http://server.local:8080

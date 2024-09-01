@@ -2,7 +2,7 @@
 
 ## Media stack
 
-- Jellyfin [:8096]
+- Plex [:32400]
 - qBittorrent [:8080]
 - Flaresolverr [:8191]
 - Jackett [:9117]
