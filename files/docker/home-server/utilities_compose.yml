@@ -10,7 +10,7 @@ services:
     volumes:
       - proxy_data:/data
       - proxy_letsencrypt:/etc/letsencrypt
-    restart: unless-stopped
+    restart: always
 
   homepage:
     image: ghcr.io/gethomepage/homepage:latest
@@ -53,10 +53,24 @@ services:
       - portainer:/data
     restart: always
 
+  file-browser:
+    image: filebrowser/filebrowser:latest
+    container_name: file-browser
+    environment:
+      - PUID=1000
+        PGID=1000
+    ports:
+      - 8112:80
+    volumes:
+      - filebrowser:/database
+      - /:/srv
+    restart: always
+
 volumes:
   portainer:
   proxy_data:
   proxy_letsencrypt:
+  filebrowser:
 
 networks:
   default:

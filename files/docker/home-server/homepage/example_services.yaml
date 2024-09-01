@@ -70,3 +70,8 @@
           url: https://portainer:9443
           env: 2
           key: ptr_key
+    - File Browser:
+        icon: https://static-00.iconduck.com/assets.00/filebrowser-icon-2048x2048-boocnon8.png
+        href: http://server.local:8112
+        server: server
+        container: file-browser

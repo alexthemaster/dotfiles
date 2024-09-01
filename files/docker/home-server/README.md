@@ -14,4 +14,5 @@
 - [NGINX Proxy Manager](./img/pm.png) [:80, :443, :81]
 - Portainer [:9443]
 - Homepage [:3000] - further setup required. Rename the `example_services.yaml` file from within the homepage folder to `services.yaml` and fill in the API keys and modify domain URL as you see fit
+- File Browser [:8112]
 - Docker Proxy [:2375]
