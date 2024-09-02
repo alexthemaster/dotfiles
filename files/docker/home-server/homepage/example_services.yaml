@@ -28,7 +28,7 @@
           url: http://sonarr:8989
           key: apikey
     - Radarr:
-        icon: https://getumbrel.github.io/umbrel-apps-gallery/radarr/icon.svg
+        icon: https://static-00.iconduck.com/assets.00/radarr-icon-1845x2048-97le6lim.png
         href: http://server.local:7878
         server: server
         container: radarr
