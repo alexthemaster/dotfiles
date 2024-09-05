@@ -24,7 +24,7 @@ services:
       - DOCKER_MODS=arafatamim/linuxserver-io-mod-vuetorrent
     volumes:
       - qbittorrent:/config
-      - /mnt/HDD:/downloads
+      - /mnt/HDD:/hdd
     ports:
       - 8080:8080
       - 6881:6881
@@ -62,8 +62,7 @@ services:
       - PGID=1000
     volumes:
       - sonarr:/config
-      - /mnt/HDD/Sorted/TV Shows/:/tv
-      - /mnt/HDD/Shows:/downloads
+      - /mnt/HDD:/hdd
     ports:
       - 8989:8989
     restart: always
@@ -79,8 +78,7 @@ services:
       - PGID=1000
     volumes:
       - radarr:/config
-      - /mnt/HDD/Sorted/Movies/:/movies
-      - /mnt/HDD/Movies:/downloads
+      - /mnt/HDD:/hdd
     ports:
       - 7878:7878
     restart: always
