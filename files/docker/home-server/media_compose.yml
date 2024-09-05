@@ -21,10 +21,10 @@ services:
       - TORRENTING_PORT=6881
       - PUID=1000
       - PGID=1000
-      - DOCKER_MODS=arafatamim/linuxserver-io-mod-vuetorrent
     volumes:
       - qbittorrent:/config
       - /mnt/HDD:/hdd
+      - ./vuetorrent:/vuetorrent
     ports:
       - 8080:8080
       - 6881:6881

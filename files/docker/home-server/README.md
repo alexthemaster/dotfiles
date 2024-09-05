@@ -3,7 +3,7 @@
 ## Media stack
 
 - Plex [:32400]
-- qBittorrent [:8080]
+- qBittorrent [:8080] - download [vuetorrent](https://github.com/VueTorrent/VueTorrent) and place in this folder if you want to use it as an alternative UI
 - Flaresolverr [:8191]
 - Jackett [:9117]
 - Sonarr [:8989]
