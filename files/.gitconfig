@@ -1,6 +1,7 @@
 [user]
 	name = Alex Kovacs
 	email = alexdemaster@proton.me
+	signingkey = /home/alex/.ssh/id_ed25519.pub
 [core]
 	editor = "code"
 [help]
@@ -13,3 +14,7 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh
