@@ -18,6 +18,8 @@ alias ytmp4="yt-mp4"
 
 alias ls="ls --color=auto"
 
+alias dnf="dnf5"
+
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
