@@ -19,6 +19,7 @@ alias ytmp4="yt-mp4"
 alias ls="ls --color=auto"
 
 alias dnf="dnf5"
+alias sudo="sudo "
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
