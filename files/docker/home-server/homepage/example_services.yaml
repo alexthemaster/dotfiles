@@ -36,6 +36,15 @@
           type: radarr
           url: http://radarr:7878
           key: apikey
+    - Bazarr:
+        icon: https://wiki.bazarr.media/img/logo.png
+        href: http://server.local:6767
+        server: server
+        container: bazarr
+        widget:
+          type: bazarr
+          url: http://bazarr:6767
+          key: apikey
     - Jackett:
         icon: https://styles.redditmedia.com/t5_3e9ey/styles/communityIcon_vouv833bm3g31.png
         href: http://server.local:9117
