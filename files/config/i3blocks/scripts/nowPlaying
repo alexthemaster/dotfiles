@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-isPaused=$(playerctl status)
-
-if [ "$isPaused" == "Playing" ]; then
-    echo "Now Playing: $(playerctl metadata artist) - $(playerctl metadata title)"
-fi
