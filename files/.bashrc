@@ -1,4 +1,5 @@
 eval "$(starship init bash)"
+eval "$(zoxide init bash)"
 fastfetch || neofetch
 
 # Git related aliasees
@@ -20,6 +21,8 @@ alias ls="ls --color=auto"
 
 alias dnf="dnf5"
 alias sudo="sudo "
+
+alias cd="z"
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
