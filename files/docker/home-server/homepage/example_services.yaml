@@ -45,15 +45,24 @@
           type: bazarr
           url: http://bazarr:6767
           key: apikey
-    - Jackett:
-        icon: https://styles.redditmedia.com/t5_3e9ey/styles/communityIcon_vouv833bm3g31.png
-        href: http://server.local:9117
+    # - Jackett:
+    #     icon: https://styles.redditmedia.com/t5_3e9ey/styles/communityIcon_vouv833bm3g31.png
+    #     href: http://server.local:9117
+    #     server: server
+    #     container: jackett
+    #     widget:
+    #       type: jackett
+    #       url: http://jackett:9117
+    #       apikey: apikey
+    - Prowlarr:
+        icon: https://prowlarr.com/logo/128.png
+        href: https://prowlarr.kovacs.eu.org
         server: server
-        container: jackett
+        container: prowlarr
         widget:
-          type: jackett
-          url: http://jackett:9117
-          apikey: apikey
+          type: prowlarr
+          url: http://prowlarr:9696
+          key: apikey
 - Utilities:
     - NGINX Proxy Manager:
         icon: https://nginxproxymanager.com/logo.svg

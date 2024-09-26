@@ -41,18 +41,33 @@ services:
     pull_policy: always
     restart: always
 
-  jackett:
-    image: linuxserver/jackett:latest
-    container_name: jackett
+  # jackett:
+  #   image: linuxserver/jackett:latest
+  #   container_name: jackett
+  #   environment:
+  #     - AUTO_UPDATE=true
+  #     - PUID=1000
+  #     - PGID=1000
+  #   volumes:
+  #     - jackett:/config
+  #     - /mnt/HDD/:/downloads
+  #   ports:
+  #     - 9117:9117
+  #   pull_policy: always
+  #   restart: always
+  #   depends_on:
+  #     - flaresolverr
+
+  prowlarr:
+    image: linuxserver/prowlarr:latest
+    container_name: prowlarr
     environment:
-      - AUTO_UPDATE=true
       - PUID=1000
       - PGID=1000
     volumes:
-      - jackett:/config
-      - /mnt/HDD/:/downloads
+      - prowlarr:/config
     ports:
-      - 9117:9117
+      - 9696:9696
     pull_policy: always
     restart: always
     depends_on:
@@ -73,7 +88,7 @@ services:
     restart: always
     depends_on:
       - qbittorrent
-      - jackett
+      - prowlarr
 
   radarr:
     image: linuxserver/radarr:latest
@@ -90,7 +105,7 @@ services:
     restart: always
     depends_on:
       - qbittorrent
-      - jackett
+      - prowlarr
 
   bazarr:
     image: linuxserver/bazarr:latest
@@ -116,3 +131,4 @@ volumes:
   bazarr:
   jackett:
   plex:
+  prowlarr:
