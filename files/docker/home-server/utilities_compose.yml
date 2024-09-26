@@ -10,6 +10,7 @@ services:
     volumes:
       - proxy_data:/data
       - proxy_letsencrypt:/etc/letsencrypt
+    pull_policy: always
     restart: always
 
   homepage:
@@ -23,6 +24,7 @@ services:
     volumes:
       - /home/alex/dotfiles/files/docker/home-server/homepage:/app/config
       - /mnt/HDD/:/HDD
+    pull_policy: always
     restart: always
     depends_on:
       - dockerproxy
@@ -40,6 +42,7 @@ services:
       - 2375:2375
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro # Mounted as read-only
+    pull_policy: always
     restart: unless-stopped
 
   portainer:
@@ -51,6 +54,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer:/data
+    pull_policy: always
     restart: always
 
   file-browser:
@@ -64,6 +68,7 @@ services:
     volumes:
       - filebrowser:/database
       - /:/srv
+    pull_policy: always
     restart: always
 
 volumes:

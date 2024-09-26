@@ -12,6 +12,7 @@ services:
       - plex:/config
       - /mnt/HDD/Sorted/TV Shows/:/tv
       - /mnt/HDD/Sorted/Movies:/movies
+    pull_policy: always
     restart: always
 
   qbittorrent:
@@ -29,6 +30,7 @@ services:
       - 8080:8080
       - 6881:6881
       - 6881:6881/udp
+    pull_policy: always
     restart: always
 
   flaresolverr:
@@ -36,6 +38,7 @@ services:
     container_name: flaresolverr
     ports:
       - 8191:8191
+    pull_policy: always
     restart: always
 
   jackett:
@@ -50,6 +53,7 @@ services:
       - /mnt/HDD/:/downloads
     ports:
       - 9117:9117
+    pull_policy: always
     restart: always
     depends_on:
       - flaresolverr
@@ -65,6 +69,7 @@ services:
       - /mnt/HDD:/hdd
     ports:
       - 8989:8989
+    pull_policy: always
     restart: always
     depends_on:
       - qbittorrent
@@ -81,6 +86,7 @@ services:
       - /mnt/HDD:/hdd
     ports:
       - 7878:7878
+    pull_policy: always
     restart: always
     depends_on:
       - qbittorrent
@@ -97,6 +103,7 @@ services:
       - /mnt/HDD:/hdd
     ports:
       - 6767:6767
+    pull_policy: always
     restart: always
     depends_on:
       - radarr
