@@ -18,6 +18,10 @@ services:
   qbittorrent:
     image: linuxserver/qbittorrent:latest
     container_name: qbittorrent
+    deploy:
+      resources:
+        limits: 
+          cpus: "3.2"
     environment:
       - TORRENTING_PORT=6881
       - PUID=1000
