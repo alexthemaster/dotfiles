@@ -23,6 +23,7 @@ alias dnf="dnf5"
 alias sudo="sudo "
 
 alias cd="z"
+alias x="exit"
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
