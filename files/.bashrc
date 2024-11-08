@@ -30,7 +30,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Bash autocomplete
-source /etc/profile.d/bash_completion.sh
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
 
 # Created by `pipx` on 2024-09-01 20:42:19
 export PATH="$PATH:/home/alex/.local/bin"
+
+export PATH=$PATH:/home/alex/.spicetify
