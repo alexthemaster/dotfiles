@@ -21,7 +21,7 @@ services:
     deploy:
       resources:
         limits: 
-          cpus: "3.2"
+          cpus: "2.5"
     environment:
       - TORRENTING_PORT=6881
       - PUID=1000
@@ -136,3 +136,8 @@ volumes:
   jackett:
   plex:
   prowlarr:
+
+networks:
+  default:
+    name: home
+    external: true

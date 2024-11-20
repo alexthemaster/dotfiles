@@ -96,5 +96,5 @@ volumes:
 
 networks:
   default:
-    name: media_default
+    name: home
     external: true
