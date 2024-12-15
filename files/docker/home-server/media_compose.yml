@@ -20,8 +20,8 @@ services:
     container_name: qbittorrent
     deploy:
       resources:
-        limits: 
-          cpus: "2.5"
+        limits:
+          memory: 2500M
     environment:
       - TORRENTING_PORT=6881
       - PUID=1000
@@ -34,6 +34,7 @@ services:
       - 8080:8080
       - 6881:6881
       - 6881:6881/udp
+    cpu_shares: 512
     pull_policy: always
     restart: always
 
@@ -72,6 +73,7 @@ services:
       - prowlarr:/config
     ports:
       - 9696:9696
+    cpu_shares: 512
     pull_policy: always
     restart: always
     depends_on:
