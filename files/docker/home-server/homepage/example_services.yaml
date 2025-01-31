@@ -64,16 +64,6 @@
           url: http://prowlarr:9696
           key: apikey
 - Utilities:
-    - NGINX Proxy Manager:
-        icon: https://nginxproxymanager.com/logo.svg
-        href: http://server.local:81
-        server: server
-        container: proxy-manager
-        widget:
-          type: npm
-          url: http://proxy-manager:81
-          username: alexdemaster@proton.me
-          password: changeme
     - Portainer:
         icon: https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_200,h_200/https://api.charmhub.io/api/v1/media/download/charm_Owpj9CsDEMZwVtup3ZTxxs0FtyvDqb2o_icon_5cef79c2d18f67464f39c8f2cf2d7ebb815b0071f04d3ffbb94f49fddd3ab666.png
         href: http://server.local:9443

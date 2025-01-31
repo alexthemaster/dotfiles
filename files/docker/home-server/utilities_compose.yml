@@ -1,17 +1,33 @@
 name: Utilities
 services:
-  proxy-manager:
-    image: "jc21/nginx-proxy-manager:latest"
-    container_name: proxy-manager
+  #  proxy-manager:
+  #    image: "jc21/nginx-proxy-manager:latest"
+  #    container_name: proxy-manager
+  #    ports:
+  #      - "80:80"
+  #      - "81:81"
+  #      - "443:443"
+  #    volumes:
+  #      - proxy_data:/data
+  #      - proxy_letsencrypt:/etc/letsencrypt
+  #    pull_policy: always
+  #    restart: always
+
+  caddy:
+    image: caddy:2-alpine
+    container_name: caddy
+    cap_add:
+      - NET_ADMIN
     ports:
       - "80:80"
-      - "81:81"
       - "443:443"
+      - "443:443/udp"
     volumes:
-      - proxy_data:/data
-      - proxy_letsencrypt:/etc/letsencrypt
+      - ./caddy:/etc/caddy
+      - caddy_data:/data
+      - caddy_config:/config
     pull_policy: always
-    restart: always
+    restart: unless-stopped
 
   homepage:
     image: ghcr.io/gethomepage/homepage:latest
@@ -67,6 +83,7 @@ services:
       - 8112:80
     volumes:
       - filebrowser:/database
+      - filebrowser:/config
       - /:/srv
     pull_policy: always
     restart: always
@@ -93,6 +110,8 @@ volumes:
   filebrowser:
   pihole:
   pihole_dnsmasq:
+  caddy_data:
+  caddy_config:
 
 networks:
   default:
