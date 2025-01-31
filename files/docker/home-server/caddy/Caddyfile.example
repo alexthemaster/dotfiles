@@ -10,7 +10,13 @@ bazarr.kovacs.eu.org {
 }
 
 cockpit.kovacs.eu.org {
-    reverse_proxy https://192.168.1.157:9090
+    import auth
+    reverse_proxy 192.168.1.157:9090 {
+        transport http {
+            tls
+            tls_insecure_skip_verify
+        }
+    }
 }
 
 containers.kovacs.eu.org {
