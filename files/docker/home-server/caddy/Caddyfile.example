@@ -1,5 +1,6 @@
 (auth) {
-	basic_auth {
+        @not-local not remote_ip private_ranges
+        basic_auth @not-local {
 		alex (caddy hash-password in terminal)
 	}
 }
