@@ -37,7 +37,7 @@ files.kovacs.eu.org {
         reverse_proxy file-browser
     }
 
-    handle * {
+    handle {
         import auth
         reverse_proxy file-browser
     }
