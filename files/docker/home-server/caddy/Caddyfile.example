@@ -1,69 +1,66 @@
 (auth) {
-    basic_auth {
-        alex (caddy hash-password in terminal)
-    }
+	basic_auth {
+		alex (caddy hash-password in terminal)
+	}
 }
 
-
 bazarr.kovacs.eu.org {
-    reverse_proxy bazarr:6767
+	reverse_proxy bazarr:6767
 }
 
 cockpit.kovacs.eu.org {
-    import auth
-    reverse_proxy 192.168.1.157:9090 {
-        transport http {
-            tls
-            tls_insecure_skip_verify
-        }
-    }
+	import auth
+	reverse_proxy 192.168.1.157:9090 {
+		transport http {
+			tls
+			tls_insecure_skip_verify
+		}
+	}
 }
 
 containers.kovacs.eu.org {
-    reverse_proxy portainer:9443 {
-        transport http {
-            tls
-            tls_insecure_skip_verify
-        }
-    }
+	reverse_proxy portainer:9443 {
+		transport http {
+			tls
+			tls_insecure_skip_verify
+		}
+	}
 }
 
 files.kovacs.eu.org {
-    handle /share/* {
-        reverse_proxy file-browser
-    }
+	@unrestricted path /share/* /api/public/* /static/*
 
-    handle /api/public/* {
-        reverse_proxy file-browser
-    }
+	handle @unrestricted {
+		reverse_proxy file-browser
+	}
 
-    handle {
-        import auth
-        reverse_proxy file-browser
-    }
+	handle {
+		import auth
+		reverse_proxy file-browser
+	}
 }
 
 home.kovacs.eu.org {
-    reverse_proxy homepage:3000
+	reverse_proxy homepage:3000
 }
 
 jackett.kovacs.eu.org prowlarr.kovacs.eu.org {
-    reverse_proxy prowlarr:9696
+	reverse_proxy prowlarr:9696
 }
 
 plex.kovacs.eu.org {
-    reverse_proxy 192.168.1.157:32400
+	reverse_proxy 192.168.1.157:32400
 }
 
 radarr.kovacs.eu.org {
-    reverse_proxy radarr:7878
+	reverse_proxy radarr:7878
 }
 
 sonarr.kovacs.eu.org {
-    reverse_proxy sonarr:8989
+	reverse_proxy sonarr:8989
 }
 
 torrents.kovacs.eu.org {
-    import auth
-    reverse_proxy qbittorrent:8080
+	import auth
+	reverse_proxy qbittorrent:8080
 }
