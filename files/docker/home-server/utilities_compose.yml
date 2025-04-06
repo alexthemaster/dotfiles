@@ -24,6 +24,7 @@ services:
       - "443:443/udp"
     volumes:
       - ./caddy:/etc/caddy
+      - /var/log/:/var/log
       - caddy_data:/data
       - caddy_config:/config
     pull_policy: always

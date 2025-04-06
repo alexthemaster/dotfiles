@@ -1,15 +1,27 @@
 (auth) {
-        @not-local not remote_ip private_ranges
-        basic_auth @not-local {
+	@not-local not remote_ip private_ranges
+	basic_auth @not-local {
 		alex (caddy hash-password in terminal)
 	}
 }
 
+(logging) {
+	log {
+		output file /var/log/caddy/{args[0]}.log {
+			roll_size 10MB # Create new file when size exceeds 10MB
+			roll_keep 5 # Keep at most 5 rolled files
+			roll_keep_days 14 # Delete files older than 14 days
+		}
+	}
+}
+
 bazarr.kovacs.eu.org {
+	import logging bazarr
 	reverse_proxy bazarr:6767
 }
 
 cockpit.kovacs.eu.org {
+	import logging cockpit
 	import auth
 	reverse_proxy 192.168.1.157:9090 {
 		transport http {
@@ -20,6 +32,7 @@ cockpit.kovacs.eu.org {
 }
 
 containers.kovacs.eu.org {
+	import logging containers
 	reverse_proxy portainer:9443 {
 		transport http {
 			tls
@@ -29,6 +42,7 @@ containers.kovacs.eu.org {
 }
 
 files.kovacs.eu.org {
+	import logging files
 	@unrestricted path /share/* /api/public/* /static/*
 
 	handle @unrestricted {
@@ -42,26 +56,32 @@ files.kovacs.eu.org {
 }
 
 home.kovacs.eu.org {
+	import logging home
 	reverse_proxy homepage:3000
 }
 
 jackett.kovacs.eu.org prowlarr.kovacs.eu.org {
+	import logging prowlarr	
 	reverse_proxy prowlarr:9696
 }
 
 plex.kovacs.eu.org {
+	import logging plex
 	reverse_proxy 192.168.1.157:32400
 }
 
 radarr.kovacs.eu.org {
+	import logging radarr
 	reverse_proxy radarr:7878
 }
 
 sonarr.kovacs.eu.org {
+	import logging sonarr
 	reverse_proxy sonarr:8989
 }
 
 torrents.kovacs.eu.org {
+	import logging torrents
 	import auth
 	reverse_proxy qbittorrent:8080
 }
