@@ -46,23 +46,6 @@ services:
     pull_policy: always
     restart: always
 
-  # jackett:
-  #   image: linuxserver/jackett:latest
-  #   container_name: jackett
-  #   environment:
-  #     - AUTO_UPDATE=true
-  #     - PUID=1000
-  #     - PGID=1000
-  #   volumes:
-  #     - jackett:/config
-  #     - /mnt/HDD/:/downloads
-  #   ports:
-  #     - 9117:9117
-  #   pull_policy: always
-  #   restart: always
-  #   depends_on:
-  #     - flaresolverr
-
   prowlarr:
     image: linuxserver/prowlarr:latest
     container_name: prowlarr
@@ -129,6 +112,19 @@ services:
     depends_on:
       - radarr
       - sonarr
+  navidrome:
+    image: deluan/navidrome:latest
+    container_name: navidrome
+    environment:
+      - ND_LASTFM_APIKEY=6642215e8e7f555ec0b2b33a0ec97b33
+      - ND_LASTFM_SECRET=fca0039608c8a1c12bdb8047d25e4065
+    ports:
+      - "4533:4533"
+    pull_policy: always
+    restart: always
+    volumes:
+      - navidrome:/data
+      - "/mnt/HDD/Music:/music:ro"
 
 volumes:
   qbittorrent:
@@ -138,6 +134,7 @@ volumes:
   jackett:
   plex:
   prowlarr:
+  navidrome:
 
 networks:
   default:
