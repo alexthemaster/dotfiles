@@ -126,15 +126,27 @@ services:
       - navidrome:/data
       - "/mnt/HDD/Music:/music:ro"
 
+  audiobookshelf:
+    image: ghcr.io/advplyr/audiobookshelf:latest
+    container_name: audiobookshelf
+    ports:
+      - 13378:80
+    volumes:
+      - /mnt/HDD/Audiobooks:/audiobooks
+      # - </path/to/podcasts>:/podcasts
+      - audiobookshelf:/config
+      - audiobookshelf_meta:/metadata
+
 volumes:
   qbittorrent:
   sonarr:
   radarr:
   bazarr:
-  jackett:
   plex:
   prowlarr:
   navidrome:
+  audiobookshelf:
+  audiobookshelf_meta:
 
 networks:
   default:
