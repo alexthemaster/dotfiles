@@ -38,14 +38,6 @@ services:
     pull_policy: always
     restart: always
 
-  flaresolverr:
-    image: flaresolverr/flaresolverr:latest
-    container_name: flaresolverr
-    ports:
-      - 8191:8191
-    pull_policy: always
-    restart: always
-
   prowlarr:
     image: linuxserver/prowlarr:latest
     container_name: prowlarr
@@ -59,8 +51,6 @@ services:
     cpu_shares: 512
     pull_policy: always
     restart: always
-    depends_on:
-      - flaresolverr
 
   sonarr:
     image: linuxserver/sonarr:latest
