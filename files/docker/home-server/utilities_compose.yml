@@ -76,16 +76,12 @@ services:
     image: portainer/agent:latest
 
   file-browser:
-    image: filebrowser/filebrowser:latest
+    image: gtstef/filebrowser
     container_name: file-browser
-    environment:
-      - PUID=1000
-        PGID=1000
     ports:
       - 8112:80
     volumes:
-      - filebrowser:/database
-      - filebrowser:/config
+      - filebrowser:/home/filebrowser/data
       - /:/srv
     pull_policy: always
     restart: unless-stopped
@@ -98,6 +94,14 @@ services:
       - 8090:8090
     volumes:
       - beszel:/beszel_data
+
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    volumes:
+      - /mnt/HDD/DockerData/VaultWarden:/data/
+    ports:
+      - 8088:80
 
 volumes:
   portainer:

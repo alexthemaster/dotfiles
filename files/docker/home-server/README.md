@@ -18,3 +18,4 @@
 - File Browser [:8112]
 - Docker Proxy [:2375]
 - Beszel [:8090]
+- Vaultwarden [:8088]

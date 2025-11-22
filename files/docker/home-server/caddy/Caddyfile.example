@@ -101,3 +101,8 @@ beszel.kovacs.eu.org {
 	import logging beszel
 	reverse_proxy beszel:8090
 }
+
+vault.kovacs.eu.org {
+	import logging vaultwarden
+	reverse_proxy localhost:8088
+}
