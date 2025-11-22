@@ -13,7 +13,7 @@ services:
       - /mnt/HDD/Sorted/TV Shows/:/tv
       - /mnt/HDD/Sorted/Movies:/movies
     pull_policy: always
-    restart: always
+    restart: unless-stopped
 
   qbittorrent:
     image: linuxserver/qbittorrent:latest
@@ -31,7 +31,7 @@ services:
       - 6881:6881
       - 6881:6881/udp
     pull_policy: always
-    restart: always
+    restart: unless-stopped
 
   prowlarr:
     image: linuxserver/prowlarr:latest
@@ -44,7 +44,7 @@ services:
     ports:
       - 9696:9696
     pull_policy: always
-    restart: always
+    restart: unless-stopped
 
   sonarr:
     image: linuxserver/sonarr:latest
@@ -58,7 +58,7 @@ services:
     ports:
       - 8989:8989
     pull_policy: always
-    restart: always
+    restart: unless-stopped
     depends_on:
       - qbittorrent
       - prowlarr
@@ -75,7 +75,7 @@ services:
     ports:
       - 7878:7878
     pull_policy: always
-    restart: always
+    restart: unless-stopped
     depends_on:
       - qbittorrent
       - prowlarr
@@ -92,17 +92,18 @@ services:
     ports:
       - 6767:6767
     pull_policy: always
-    restart: always
+    restart: unless-stopped
     depends_on:
       - radarr
       - sonarr
+
   navidrome:
     image: deluan/navidrome:latest
     container_name: navidrome
     ports:
       - "4533:4533"
     pull_policy: always
-    restart: always
+    restart: unless-stopped
     volumes:
       - navidrome:/data
       - "/mnt/HDD/Music:/music:ro"
