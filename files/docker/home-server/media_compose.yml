@@ -18,10 +18,6 @@ services:
   qbittorrent:
     image: linuxserver/qbittorrent:latest
     container_name: qbittorrent
-    deploy:
-      resources:
-        limits:
-          memory: 2500M
     environment:
       - TORRENTING_PORT=6881
       - PUID=1000
@@ -34,7 +30,6 @@ services:
       - 8080:8080
       - 6881:6881
       - 6881:6881/udp
-    cpu_shares: 512
     pull_policy: always
     restart: always
 
@@ -48,7 +43,6 @@ services:
       - prowlarr:/config
     ports:
       - 9696:9696
-    cpu_shares: 512
     pull_policy: always
     restart: always
 
@@ -105,9 +99,6 @@ services:
   navidrome:
     image: deluan/navidrome:latest
     container_name: navidrome
-    environment:
-      - ND_LASTFM_APIKEY=6642215e8e7f555ec0b2b33a0ec97b33
-      - ND_LASTFM_SECRET=fca0039608c8a1c12bdb8047d25e4065
     ports:
       - "4533:4533"
     pull_policy: always
