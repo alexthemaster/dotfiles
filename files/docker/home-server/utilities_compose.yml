@@ -101,11 +101,7 @@ services:
 
 volumes:
   portainer:
-  proxy_data:
-  proxy_letsencrypt:
   filebrowser:
-  pihole:
-  pihole_dnsmasq:
   caddy_data:
   caddy_config:
   beszel:
