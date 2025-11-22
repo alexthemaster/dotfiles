@@ -16,4 +16,4 @@
 - Homepage [:3000] - further setup required. Rename the `example_services.yaml` file from within the homepage folder to `services.yaml` and fill in the API keys and modify domain URL as you see fit
 - File Browser [:8112]
 - Docker Proxy [:2375]
-- Pi-hole [:7894]
+- Beszel [:8090]

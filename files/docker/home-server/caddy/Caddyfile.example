@@ -85,3 +85,19 @@ torrents.kovacs.eu.org {
 	import auth
 	reverse_proxy qbittorrent:8080
 }
+
+music.kovacs.eu.org {
+	import logging navidrome
+	reverse_proxy navidrome:4533
+}
+
+audiobooks.kovacs.eu.org {
+	import logging audiobookshelf
+	encode gzip zstd
+	reverse_proxy localhost:13378
+}
+
+beszel.kovacs.eu.org {
+	import logging beszel
+	reverse_proxy beszel:8090
+}
