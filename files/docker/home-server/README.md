@@ -7,7 +7,8 @@
 - Sonarr [:8989]
 - Radarr [:7878]
 - Prowlarr [:9696]
-- Flaresolverr [:8191]
+- Navidrome [:4553]
+- Audiobookshelf [:13378]
 
 ## Utilities stack
 
