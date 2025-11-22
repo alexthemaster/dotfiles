@@ -6,7 +6,6 @@
     cpu: true
     memory: true
     disk:
-      - /
       - /HDD
     expanded: true
     diskUnits: bytes
