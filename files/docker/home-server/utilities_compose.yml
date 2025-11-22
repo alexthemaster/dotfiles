@@ -1,18 +1,5 @@
 name: Utilities
 services:
-  #  proxy-manager:
-  #    image: "jc21/nginx-proxy-manager:latest"
-  #    container_name: proxy-manager
-  #    ports:
-  #      - "80:80"
-  #      - "81:81"
-  #      - "443:443"
-  #    volumes:
-  #      - proxy_data:/data
-  #      - proxy_letsencrypt:/etc/letsencrypt
-  #    pull_policy: always
-  #    restart: always
-
   caddy:
     image: caddy:2-alpine
     container_name: caddy
@@ -103,20 +90,14 @@ services:
     pull_policy: always
     restart: always
 
-#  pihole:
-#    image: pihole/pihole:latest
-#    container_name: pihole
-#    network_mode: host
-#    environment:
-#      TZ: "Europe/Bucharest"
-#      WEB_PORT: 7894
-#    volumes:
-#      - pihole:/etc/pihole
-#      - pihole_dnsmasq:/etc/dnsmasq.d
-#    cap_add:
-#      - NET_ADMIN # Required if you are using Pi-hole as your DHCP server, else not needed
-#    pull_policy: always
-#    restart: always
+  beszel:
+    image: henrygd/beszel
+    container_name: beszel
+    restart: unless-stopped
+    ports:
+      - 8090:8090
+    volumes:
+      - beszel:/beszel_data
 
 volumes:
   portainer:
@@ -127,6 +108,7 @@ volumes:
   pihole_dnsmasq:
   caddy_data:
   caddy_config:
+  beszel:
 
 networks:
   default:
