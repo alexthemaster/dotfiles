@@ -1,6 +1,6 @@
 - Media:
     - Plex:
-        icon: https://static-00.iconduck.com/assets.00/plex-icon-2048x2048-kdgfrhh9.png
+        icon: https:/https://cdn.jsdelivr.net/gh/selfhst/icons/svg/plex.svg
         href: http://server.local:32400
         server: server
         container: plex
@@ -10,7 +10,7 @@
           key: token # see https://www.plexopedia.com/plex-media-server/general/plex-token/
 
     - Audiobookshelf:
-        icon: https://audiobookshelf.org/Logo.png
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/audiobookshelf.svg
         href: https://server.local:13378
         server: server
         container: audiobookshelf
@@ -20,7 +20,7 @@
           key: apikey
 
     - qBittorrent:
-        icon: https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/New_qBittorrent_Logo.svg/2048px-New_qBittorrent_Logo.svg.png
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/qbittorrent.svg
         href: http://server.local:8080
         server: server
         container: qbittorrent
@@ -31,7 +31,7 @@
           password: password
 
     - Sonarr:
-        icon: https://avatars.githubusercontent.com/u/1082903?s=280&v=4
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/sonarr-radarr-light.svg
         href: http://server.local:8989
         server: server
         container: sonarr
@@ -41,7 +41,7 @@
           key: apikey
 
     - Radarr:
-        icon: https://static-00.iconduck.com/assets.00/radarr-icon-1845x2048-97le6lim.png
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/radarr.svg
         href: http://server.local:7878
         server: server
         container: radarr
@@ -51,7 +51,7 @@
           key: apikey
 
     - Bazarr:
-        icon: https://wiki.bazarr.media/img/logo.png
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/bazarr.svg
         href: http://server.local:6767
         server: server
         container: bazarr
@@ -71,7 +71,7 @@
     #       apikey: apikey
 
     - Prowlarr:
-        icon: https://prowlarr.com/logo/128.png
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/prowlarr-radarr-light.svg
         href: https://prowlarr.kovacs.eu.org
         server: server
         container: prowlarr
@@ -81,14 +81,14 @@
           key: apikey
 
     - Gallery:
-        icon: https://media.sys.truenas.net/apps/pigallery2/icons/icon.png
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/pigallery2-light.svg
         href: https://gallery.kovacs.eu.org
         server: server
         container: pigallery2
 
 - Utilities:
     - Portainer:
-        icon: https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_200,h_200/https://api.charmhub.io/api/v1/media/download/charm_Owpj9CsDEMZwVtup3ZTxxs0FtyvDqb2o_icon_5cef79c2d18f67464f39c8f2cf2d7ebb815b0071f04d3ffbb94f49fddd3ab666.png
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/portainer-v1.svg
         href: http://server.local:9443
         server: server
         container: portainer
@@ -99,7 +99,7 @@
           key: ptr_key
 
     - Beszel:
-        icon: https://www.webhoop.com/wp-content/uploads/2025/03/yqpywnmjadcwmjxknneqjk4x4lrj.png
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/beszel.svg
         href: https://beszel.kovacs.eu.org
         server: server
         container: beszel
@@ -112,13 +112,13 @@
           version: 2
 
     - Syncthing:
-        icon: https://upload.wikimedia.org/wikipedia/commons/5/57/Syncthing_Logo.svg
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/syncthing.svg
         href: http://192.168.1.158:8384
         server: server
         container: syncthing
 
     - File Browser:
-        icon: https://static-00.iconduck.com/assets.00/filebrowser-icon-2048x2048-boocnon8.png
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/filebrowser-quantum.svg
         href: http://server.local:8112
         server: server
         container: file-browser
