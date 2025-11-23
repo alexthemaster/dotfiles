@@ -92,6 +92,19 @@
           env: 2
           key: ptr_key
 
+    - Beszel:
+        icon: https://www.webhoop.com/wp-content/uploads/2025/03/yqpywnmjadcwmjxknneqjk4x4lrj.png
+        href: https://beszel.kovacs.eu.org
+        server: server
+        container: beszel
+        widget:
+          type: beszel
+          url: https://beszel.kovacs.eu.org
+          username: username
+          password: password
+          systemId: idInPocketBaseDB
+          version: 2
+
     - File Browser:
         icon: https://static-00.iconduck.com/assets.00/filebrowser-icon-2048x2048-boocnon8.png
         href: http://server.local:8112
