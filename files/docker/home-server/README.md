@@ -9,6 +9,7 @@
 - Prowlarr [:9696]
 - Navidrome [:4553]
 - Audiobookshelf [:13378]
+- PiGallery2 [:8087]
 
 ## Utilities stack
 
@@ -19,3 +20,4 @@
 - Docker Proxy [:2375]
 - Beszel [:8090]
 - Vaultwarden [:8088]
+- Syncthing [:8384]

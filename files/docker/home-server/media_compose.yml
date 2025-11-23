@@ -102,11 +102,11 @@ services:
     container_name: navidrome
     ports:
       - "4533:4533"
-    pull_policy: always
-    restart: unless-stopped
     volumes:
       - navidrome:/data
       - "/mnt/HDD/Music:/music:ro"
+    pull_policy: always
+    restart: unless-stopped
 
   audiobookshelf:
     image: ghcr.io/advplyr/audiobookshelf:latest
@@ -115,9 +115,25 @@ services:
       - 13378:80
     volumes:
       - /mnt/HDD/Audiobooks:/audiobooks
-      # - </path/to/podcasts>:/podcasts
       - audiobookshelf:/config
       - audiobookshelf_meta:/metadata
+    pull_policy: always
+    restart: unless-stopped
+
+  pigallery2:
+    image: bpatrik/pigallery2:latest
+    container_name: pigallery2
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - /mnt/HDD/DockerData/pigallery2/config:/app/data/config
+      - pigallery2:/app/data/db
+      - /mnt/HDD/Photos:/app/data/images:ro
+      - /mnt/HDD/DockerData/pigallery2/tmp:/app/data/tmp
+    ports:
+      - 8087:80
+    pull_policy: always
+    restart: always
 
 volumes:
   qbittorrent:
@@ -129,6 +145,7 @@ volumes:
   navidrome:
   audiobookshelf:
   audiobookshelf_meta:
+  pigallery2:
 
 networks:
   default:

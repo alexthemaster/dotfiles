@@ -80,6 +80,12 @@
           url: http://prowlarr:9696
           key: apikey
 
+    - Gallery:
+        icon: https://media.sys.truenas.net/apps/pigallery2/icons/icon.png
+        href: https://gallery.kovacs.eu.org
+        server: server
+        container: pigallery2
+
 - Utilities:
     - Portainer:
         icon: https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_200,h_200/https://api.charmhub.io/api/v1/media/download/charm_Owpj9CsDEMZwVtup3ZTxxs0FtyvDqb2o_icon_5cef79c2d18f67464f39c8f2cf2d7ebb815b0071f04d3ffbb94f49fddd3ab666.png
@@ -104,6 +110,12 @@
           password: password
           systemId: idInPocketBaseDB
           version: 2
+
+    - Syncthing:
+        icon: https://upload.wikimedia.org/wikipedia/commons/5/57/Syncthing_Logo.svg
+        href: http://192.168.1.158:8384
+        server: server
+        container: syncthing
 
     - File Browser:
         icon: https://static-00.iconduck.com/assets.00/filebrowser-icon-2048x2048-boocnon8.png

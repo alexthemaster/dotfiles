@@ -89,11 +89,12 @@ services:
   beszel:
     image: henrygd/beszel
     container_name: beszel
-    restart: unless-stopped
     ports:
       - 8090:8090
     volumes:
       - beszel:/beszel_data
+    pull_policy: always
+    restart: unless-stopped
 
   vaultwarden:
     image: vaultwarden/server:latest
@@ -102,6 +103,27 @@ services:
       - /mnt/HDD/DockerData/VaultWarden:/data/
     ports:
       - 8088:80
+    pull_policy: always
+    restart: unless-stopped
+
+  syncthing:
+    image: lscr.io/linuxserver/syncthing:latest
+    container_name: syncthing
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Bucharest
+    volumes:
+      - /mnt/HDD/DockerData/Syncthing:/config
+      - /mnt/HDD/Photos:/photos
+      - /mnt/HDD/Obsidian:/obsidian
+    ports:
+      - 8384:8384
+      - 22000:22000/tcp
+      - 22000:22000/udp
+      - 21027:21027/udp
+    pull_policy: always
+    restart: unless-stopped
 
 volumes:
   portainer:

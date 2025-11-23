@@ -106,3 +106,8 @@ vault.kovacs.eu.org {
 	import logging vaultwarden
 	reverse_proxy localhost:8088
 }
+
+gallery.kovacs.eu.org {
+	import logging gallery
+	reverse_proxy pigallery2
+}
