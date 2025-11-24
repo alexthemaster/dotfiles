@@ -124,7 +124,7 @@ services:
     image: bpatrik/pigallery2:latest
     container_name: pigallery2
     environment:
-      - NODE_ENV=debug
+      - NODE_ENV=production
     # Limit RAM
     deploy:
       resources:
