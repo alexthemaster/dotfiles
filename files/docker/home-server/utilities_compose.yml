@@ -81,7 +81,8 @@ services:
     ports:
       - 8112:80
     volumes:
-      - filebrowser:/home/filebrowser/data
+      - /mnt/HDD/DockerData/filebrowser:/home/filebrowser/data
+      - /mnt/HDD/DockerData/filebrowser/database.db:/database.db
       - /:/srv
     pull_policy: always
     restart: unless-stopped
@@ -123,7 +124,6 @@ services:
 
 volumes:
   portainer:
-  filebrowser:
   caddy_data:
   caddy_config:
   beszel:
