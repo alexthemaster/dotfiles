@@ -24,8 +24,6 @@ services:
       PUID: 1000
       PGID: 1000
       HOMEPAGE_ALLOWED_HOSTS: home.kovacs.eu.org
-    ports:
-      - 3000:3000
     volumes:
       - /home/alex/dotfiles/files/docker/home-server/homepage:/app/config
       - /mnt/HDD/:/HDD
