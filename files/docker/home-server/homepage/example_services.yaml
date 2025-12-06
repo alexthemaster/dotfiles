@@ -9,6 +9,21 @@
           url: http://localhost:32400
           key: token # see https://www.plexopedia.com/plex-media-server/general/plex-token/
 
+    - Jellyfin:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/jellyfin.svg
+        href: https://jellyfin.kovacs.eu.org
+        server: server
+        container: jellyfin
+        widget:
+          type: jellyfin
+          url: https://jellyfin.kovacs.eu.org
+          key: apiKey
+          fields: ["movies", "series", "episodes"]
+          enableBlocks: true
+          enableUser: true
+          showEpisodeNumber: true
+          expandOneStreamToTwoRows: false
+
     - Audiobookshelf:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/audiobookshelf.svg
         href: https://server.local:13378
@@ -29,6 +44,8 @@
           url: http://qbittorrent:8080
           username: username
           password: password
+          enableLeechProgress: true
+          enableLeechSize: true
 
     - Sonarr:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/sonarr-radarr-light.svg
@@ -87,16 +104,24 @@
         container: pigallery2
 
 - Utilities:
-    - Portainer:
-        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/portainer-v1.svg
-        href: http://server.local:9443
+    - Caddy:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/caddy.svg
         server: server
-        container: portainer
+        container: caddy
         widget:
-          type: portainer
-          url: https://portainer:9443
-          env: 2
-          key: ptr_key
+          type: caddy
+          url: http://caddy:2019
+
+    - AdGuard Home:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/adguard-home.svg
+        href: https://dns.kovacs.eu.org
+        server: server
+        container: adguardhome
+        widget:
+          type: adguard
+          url: https://dns.kovacs.eu.org
+          username: user
+          password: password
 
     - Beszel:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/beszel.svg
@@ -111,6 +136,35 @@
           systemId: idInPocketBaseDB
           version: 2
 
+    - Portainer:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/portainer-v1.svg
+        href: http://server.local:9443
+        server: server
+        container: portainer
+        widget:
+          type: portainer
+          url: https://portainer:9443
+          env: 2
+          key: ptr_key
+
+    - What's Up Docker:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/wud.svg
+        href: https://wud.kovacs.eu.org
+        server: server
+        container: wud
+        widget:
+          type: whatsupdocker
+          url: http://wud:3000
+
+    - Scrutiny:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/scrutiny.svg
+        href: https://scrutiny.kovacs.eu.org
+        server: server
+        container: scrutiny
+        widget:
+          type: scrutiny
+          url: https://scrutiny.kovacs.eu.org
+
     - Syncthing:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/syncthing.svg
         href: http://192.168.1.158:8384
@@ -122,3 +176,12 @@
         href: http://server.local:8112
         server: server
         container: file-browser
+
+- External:
+    - Uptime Kuma:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/uptime-kuma.svg
+        href: https://uptime.spolai.eu
+        widget:
+          type: uptimekuma
+          url: https://uptime.spolai.eu
+          slug: server

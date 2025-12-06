@@ -1,3 +1,9 @@
+{
+	admin 0.0.0.0:2019 {
+		origins *:2019
+	}
+}
+
 (auth) {
 	@not-local not remote_ip private_ranges
 	basic_auth @not-local {
@@ -94,7 +100,7 @@ music.kovacs.eu.org {
 audiobooks.kovacs.eu.org {
 	import logging audiobookshelf
 	encode gzip zstd
-	reverse_proxy localhost:13378
+	reverse_proxy audiobookshelf
 }
 
 beszel.kovacs.eu.org {
@@ -104,10 +110,20 @@ beszel.kovacs.eu.org {
 
 vault.kovacs.eu.org {
 	import logging vaultwarden
-	reverse_proxy localhost:8088
+	reverse_proxy vaultwarden
 }
 
 gallery.kovacs.eu.org {
 	import logging gallery
 	reverse_proxy pigallery2
+}
+
+dns.kovacs.eu.org {
+	import logging adguard
+	reverse_proxy localhost:81
+}
+
+scrutiny.kovacs.eu.org {
+	import logging scrutiny
+	reverse_proxy scrutiny:8080
 }

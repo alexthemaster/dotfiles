@@ -24,6 +24,8 @@ services:
       PUID: 1000
       PGID: 1000
       HOMEPAGE_ALLOWED_HOSTS: home.kovacs.eu.org
+    ports:
+      - 3001:3000
     volumes:
       - /home/alex/dotfiles/files/docker/home-server/homepage:/app/config
       - /mnt/HDD/:/HDD
@@ -119,6 +121,51 @@ services:
     network_mode: host
     pull_policy: always
     restart: unless-stopped
+
+  adguardhome:
+    image: adguard/adguardhome
+    container_name: adguardhome
+    network_mode: host
+    volumes:
+      - /mnt/HDD/DockerData/adguard/work:/opt/adguardhome/work
+      - /mnt/HDD/DockerData/adguard/conf:/opt/adguardhome/conf
+    pull_policy: always
+    restart: unless-stopped
+
+  scrutiny:
+    container_name: scrutiny
+    image: ghcr.io/analogj/scrutiny:master-omnibus
+    cap_add:
+      - SYS_RAWIO
+      - SYS_ADMIN
+    ports:
+      - "8081:8080" # webapp
+      - "8086:8086" # influxDB admin
+    volumes:
+      - /run/udev:/run/udev:ro
+      - /mnt/HDD/DockerData/scrutiny/config:/opt/scrutiny/config
+      - /mnt/HDD/DockerData/scrutiny/influxdb:/opt/scrutiny/influxdb
+    devices:
+      - /dev/sda:/dev/sda
+      - /dev/nvme0:/dev/nvme0
+    pull_policy: always
+    restart: unless-stopped
+
+  speedtest:
+    image: openspeedtest/latest
+    container_name: speedtest
+    ports:
+      - "3002:3000"
+    pull_policy: always
+    restart: unless-stopped
+
+  whatsupdocker:
+    image: getwud/wud
+    container_name: wud
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 3003:3000
 
 volumes:
   portainer:

@@ -15,6 +15,25 @@ services:
     pull_policy: always
     restart: unless-stopped
 
+  jellyfin:
+    image: jellyfin/jellyfin
+    container_name: jellyfin
+    user: 1000:1000
+    group_add:
+      - 993
+    devices:
+      - /dev/dri/renderD128:/dev/dri/renderD128
+    ports:
+      - 8096:8096/tcp
+      - 7359:7359/udp
+    volumes:
+      - /mnt/HDD/DockerData/jellyfin:/config
+      - jellyfin:/cache
+      - /mnt/HDD/Sorted/TV Shows/:/tv
+      - /mnt/HDD/Sorted/Movies:/movies
+    pull_policy: always
+    restart: "unless-stopped"
+
   qbittorrent:
     image: linuxserver/qbittorrent:latest
     container_name: qbittorrent
@@ -146,6 +165,7 @@ volumes:
   radarr:
   bazarr:
   plex:
+  jellyfin:
   prowlarr:
   navidrome:
   audiobookshelf:

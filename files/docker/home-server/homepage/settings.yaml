@@ -8,4 +8,7 @@ layout:
   Utilities:
     style: row
     columns: 4
+  External:
+    style: row
+    columns: 4
 headerStyle: boxed
