@@ -13,7 +13,7 @@
         - icon: https://www.userlogos.org/files/logos/jumpordie/csrinru_01.png
           href: https://cs.rin.ru/forum/
     - 1337x:
-        - icon: https://1337x.to/images/logo.svg
+        - icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/1337x.png
           href: https://1337x.to/
 
 - Development:
