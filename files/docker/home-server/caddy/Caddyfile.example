@@ -127,3 +127,8 @@ scrutiny.kovacs.eu.org {
 	import logging scrutiny
 	reverse_proxy scrutiny:8080
 }
+
+wud.kovacs.eu.org {
+	import logging whatsupdocker 
+	reverse_proxy wud:3000
+}
