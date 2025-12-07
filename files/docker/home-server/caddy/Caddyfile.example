@@ -132,3 +132,8 @@ wud.kovacs.eu.org {
 	import logging whatsupdocker 
 	reverse_proxy wud:3000
 }
+
+sx.kvcs.dev {
+	import logging sharex-server
+	reverse_proxy sharex-server:8080
+}

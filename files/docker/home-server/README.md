@@ -25,3 +25,4 @@
 - Scrutiny [:8081, :8086]
 - OpenSpeedTest [:3002]
 - What's Up Docker [:3003]
+- ShareX Server [:8089]

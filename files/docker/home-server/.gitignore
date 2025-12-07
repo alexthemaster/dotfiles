@@ -1,2 +1,3 @@
 vuetorrent
 caddy/Caddyfile
+*.env

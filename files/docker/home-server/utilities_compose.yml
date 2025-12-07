@@ -167,6 +167,22 @@ services:
     ports:
       - 3003:3000
 
+  sharex-server:
+    image: alexthemaster/sharex-server:latest
+    container_name: sharex-server
+    ports:
+      - "8089:8080"
+    env_file:
+      - sharex-server.env
+    environment:
+      - DEBUG=true
+      - ENABLE_SXCU=false
+      - FORCE_HTTPS=true
+    volumes:
+      - /mnt/HDD/DockerData/sharex-server:/server/uploads
+    pull_policy: always
+    restart: unless-stopped
+
 volumes:
   portainer:
   caddy_data:
