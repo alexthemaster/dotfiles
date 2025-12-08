@@ -170,6 +170,7 @@ services:
   sharex-server:
     image: alexthemaster/sharex-server:latest
     container_name: sharex-server
+    user: 1000:1000
     ports:
       - "8089:8080"
     env_file:
@@ -178,6 +179,7 @@ services:
       - DEBUG=true
       - ENABLE_SXCU=false
       - FORCE_HTTPS=true
+      - FILE_LISTING=false
     volumes:
       - /mnt/HDD/DockerData/sharex-server:/server/uploads
     pull_policy: always

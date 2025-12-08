@@ -177,6 +177,12 @@
         server: server
         container: file-browser
 
+    - ShareX Server:
+        icon: https://getsharex.com/img/ShareX_Logo.svg
+        href: https://sx.kvcs.dev
+        server: server
+        container: sharex-server
+
 - External:
     - Uptime Kuma:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/uptime-kuma.svg
