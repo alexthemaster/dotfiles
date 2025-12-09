@@ -1,0 +1,141 @@
+{
+	admin 0.0.0.0:2019 {
+		origins *:2019
+	}
+}
+
+(logging) {
+	log {
+		output file /var/log/caddy/{args[0]}.log {
+			roll_size 10MB # Create new file when size exceeds 10MB
+			roll_keep 5 # Keep at most 5 rolled files
+#			roll_keep_days 14 # Delete files older than 14 days
+		}
+	}
+}
+
+# Internal
+
+beszel.int.kvcs.dev {
+	import logging beszel
+	reverse_proxy beszel:8090
+}
+
+scrutiny.int.kvcs.dev {
+	import logging scrutiny
+	reverse_proxy scrutiny:8080
+}
+
+speedtest.int.kvcs.dev {
+	import logging speedtest 
+	reverse_proxy speedtest:3000
+}
+
+containers.int.kvcs.dev {
+	import logging containers
+	reverse_proxy portainer:9443 {
+		transport http {
+			tls
+			tls_insecure_skip_verify
+		}
+	}
+}
+
+syncthing.int.kvcs.dev {
+	import logging syncthing
+	reverse_proxy 192.168.1.130:8384
+}
+
+vault.int.kvcs.dev {
+	import logging vaultwarden
+	reverse_proxy vaultwarden
+}
+
+wud.int.kvcs.dev {
+	import logging whatsupdocker 
+	reverse_proxy wud:3000
+}
+
+cockpit.int.kvcs.dev {
+	import logging cockpit
+	reverse_proxy https://192.168.1.130:9090 {
+		    transport http {
+            tls_insecure_skip_verify
+        }
+	}
+}
+
+gallery.int.kvcs.dev {
+	import logging gallery
+	reverse_proxy pigallery2
+}
+
+dns.int.kvcs.dev {
+	import logging adguard
+	reverse_proxy 192.168.1.130:81
+}
+
+# *arr stack
+radarr.int.kvcs.dev {
+	import logging radarr
+	reverse_proxy radarr:7878
+}
+
+sonarr.int.kvcs.dev {
+	import logging sonarr
+	reverse_proxy sonarr:8989
+}
+
+bazarr.int.kvcs.dev {
+	import logging bazarr
+	reverse_proxy bazarr:6767
+}
+
+prowlarr.int.kvcs.dev {
+	import logging prowlarr	
+	reverse_proxy prowlarr:9696
+}
+
+torrents.int.kvcs.dev qb.int.kvcs.dev {
+	import logging torrents
+	reverse_proxy qbittorrent:8080
+}
+
+
+# Public 
+
+files.kovacs.eu.org files.kvcs.dev {
+	import logging files
+	reverse_proxy file-browser
+}
+
+home.kovacs.eu.org home.kvcs.dev {
+	import logging home
+	reverse_proxy homepage:3000
+}
+
+plex.kovacs.eu.org plex.kvcs.dev {
+	import logging plex
+	reverse_proxy 192.168.1.130:32400
+}
+
+music.kovacs.eu.org music.kvcs.dev {
+	import logging navidrome
+	reverse_proxy navidrome:4533
+}
+
+audiobooks.kovacs.eu.org audiobooks.kvcs.dev {
+	import logging audiobookshelf
+	encode gzip zstd
+	reverse_proxy audiobookshelf
+}
+
+jellyfin.kovacs.eu.org jellyfin.kvcs.dev {
+	import logging jellyfin
+	reverse_proxy jellyfin:8096
+}
+
+sx.kvcs.dev {
+	import logging sharex-server
+	reverse_proxy sharex-server:8080 
+}

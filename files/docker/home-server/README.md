@@ -26,3 +26,7 @@
 - OpenSpeedTest [:3002]
 - What's Up Docker [:3003]
 - ShareX Server [:8089]
+
+## System
+
+- Cockpit [:9090] - make sure to configure it to [allow reverse proxying](https://garrett.github.io/cockpit-project.github.io/external/wiki/Proxying-Cockpit-over-NGINX)

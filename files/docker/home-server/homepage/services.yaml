@@ -1,23 +1,24 @@
 - Media:
     - Plex:
-        icon: https:/https://cdn.jsdelivr.net/gh/selfhst/icons/svg/plex.svg
-        href: http://server.local:32400
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/plex.svg
+        href: https://plex.kovacs.eu.org
         server: server
         container: plex
         widget:
           type: plex
-          url: http://localhost:32400
-          key: token # see https://www.plexopedia.com/plex-media-server/general/plex-token/
+          url: https://192.168.1.130:32400
+          key: {{HOMEPAGE_VAR_PLEX}}
+          fields: ["streams", "movies", "tv"]
 
     - Jellyfin:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/jellyfin.svg
-        href: https://jellyfin.kovacs.eu.org
+        href: https://jellyfin.kvcs.dev
         server: server
         container: jellyfin
         widget:
           type: jellyfin
-          url: https://jellyfin.kovacs.eu.org
-          key: apiKey
+          url: https://jellyfin.kvcs.dev
+          key: {{HOMEPAGE_VAR_JELLYFIN}}
           fields: ["movies", "series", "episodes"]
           enableBlocks: true
           enableUser: true
@@ -26,80 +27,68 @@
 
     - Audiobookshelf:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/audiobookshelf.svg
-        href: https://server.local:13378
+        href: https://audiobooks.kovacs.eu.org
         server: server
         container: audiobookshelf
         widget:
           type: audiobookshelf
-          url: http://audiobookshelf:13378
-          key: apikey
+          url: https://audiobooks.kovacs.eu.org
+          key: {{HOMEPAGE_VAR_AUDIOBOOKSHELF}}
 
     - qBittorrent:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/qbittorrent.svg
-        href: http://server.local:8080
+        href: https://torrents.int.kvcs.dev
         server: server
         container: qbittorrent
         widget:
           type: qbittorrent
           url: http://qbittorrent:8080
-          username: username
-          password: password
           enableLeechProgress: true
           enableLeechSize: true
 
     - Sonarr:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/sonarr-radarr-light.svg
-        href: http://server.local:8989
+        href: https://sonarr.int.kvcs.dev
         server: server
         container: sonarr
         widget:
           type: sonarr
           url: http://sonarr:8989
-          key: apikey
+          key: {{HOMEPAGE_VAR_SONARR}}
 
     - Radarr:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/radarr.svg
-        href: http://server.local:7878
+        href: https://radarr.int.kvcs.dev
         server: server
         container: radarr
         widget:
           type: radarr
           url: http://radarr:7878
-          key: apikey
+          key: {{HOMEPAGE_VAR_RADARR}}
 
     - Bazarr:
-        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/bazarr.svg
-        href: http://server.local:6767
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/bazarr-light.svg
+        href: https://bazarr.int.kvcs.dev
         server: server
         container: bazarr
         widget:
           type: bazarr
           url: http://bazarr:6767
-          key: apikey
-
-    # - Jackett:
-    #     icon: https://styles.redditmedia.com/t5_3e9ey/styles/communityIcon_vouv833bm3g31.png
-    #     href: http://server.local:9117
-    #     server: server
-    #     container: jackett
-    #     widget:
-    #       type: jackett
-    #       url: http://jackett:9117
-    #       apikey: apikey
+          key: {{HOMEPAGE_VAR_BAZARR}}
 
     - Prowlarr:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/prowlarr-radarr-light.svg
-        href: https://prowlarr.kovacs.eu.org
+        href: https://prowlarr.int.kvcs.dev
         server: server
         container: prowlarr
         widget:
           type: prowlarr
           url: http://prowlarr:9696
-          key: apikey
+          key: {{HOMEPAGE_VAR_PROWLARR}}
 
     - Gallery:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/pigallery2-light.svg
-        href: https://gallery.kovacs.eu.org
+        href: https://gallery.int.kvcs.dev
         server: server
         container: pigallery2
 
@@ -110,46 +99,56 @@
         container: caddy
         widget:
           type: caddy
-          url: http://caddy:2019
+          url: http://caddy:2019 # default admin port is 2019
 
     - AdGuard Home:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/adguard-home.svg
-        href: https://dns.kovacs.eu.org
+        href: https://dns.int.kvcs.dev
         server: server
         container: adguardhome
         widget:
           type: adguard
-          url: https://dns.kovacs.eu.org
-          username: user
-          password: password
+          url: https://dns.int.kvcs.dev
 
     - Beszel:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/beszel.svg
-        href: https://beszel.kovacs.eu.org
+        href: https://beszel.int.kvcs.dev
         server: server
         container: beszel
-        widget:
-          type: beszel
-          url: https://beszel.kovacs.eu.org
-          username: username
-          password: password
-          systemId: idInPocketBaseDB
+        widgets:
+        - type: beszel
+          url: https://beszel.int.kvcs.dev
+          username: alex@kvcs.dev
+          password: {{HOMEPAGE_VAR_BESZEL_PASS}}
+          systemId: gxrsxd9zti4ibnl
+          version: 2
+        - type: beszel
+          url: https://beszel.int.kvcs.dev
+          username: alex@kvcs.dev
+          password: {{HOMEPAGE_VAR_BESZEL_PASS}}
+          systemId: w4mdf29x7tjtv30
+          version: 2
+        - type: beszel
+          url: https://beszel.int.kvcs.dev
+          username: alex@kvcs.dev
+          password: {{HOMEPAGE_VAR_BESZEL_PASS}}
+          systemId: uwy785ed0qr1wrm
           version: 2
 
     - Portainer:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/portainer-v1.svg
-        href: http://server.local:9443
+        href: https://containers.int.kvcs.dev
         server: server
         container: portainer
         widget:
           type: portainer
           url: https://portainer:9443
-          env: 2
-          key: ptr_key
+          env: 6
+          key: {{HOMEPAGE_VAR_PORTAINER}}
 
     - What's Up Docker:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/wud.svg
-        href: https://wud.kovacs.eu.org
+        href: https://wud.int.kvcs.dev
         server: server
         container: wud
         widget:
@@ -158,22 +157,22 @@
 
     - Scrutiny:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/scrutiny.svg
-        href: https://scrutiny.kovacs.eu.org
+        href: https://scrutiny.int.kvcs.dev
         server: server
         container: scrutiny
         widget:
           type: scrutiny
-          url: https://scrutiny.kovacs.eu.org
+          url: https://scrutiny.int.kvcs.dev
 
     - Syncthing:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/syncthing.svg
-        href: http://192.168.1.158:8384
+        href: https://syncthing.int.kvcs.dev
         server: server
         container: syncthing
 
     - File Browser:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/filebrowser-quantum.svg
-        href: http://server.local:8112
+        href: https://files.kovacs.eu.org
         server: server
         container: file-browser
 
