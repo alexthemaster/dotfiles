@@ -2,6 +2,10 @@
 	admin 0.0.0.0:2019 {
 		origins *:2019
 	}
+	# Cloudflare
+	servers {
+		trusted_proxies static 173.245.48.0/20 103.21.244.0/22 103.22.200.0/22 103.31.4.0/22 141.101.64.0/18 108.162.192.0/18 190.93.240.0/20 188.114.96.0/20 197.234.240.0/22 198.41.128.0/17 162.158.0.0/15 104.16.0.0/13 104.24.0.0/14 172.64.0.0/13 131.0.72.0/22
+	}
 }
 
 (logging) {
@@ -14,25 +18,39 @@
 	}
 }
 
+(internal) {
+	@denied not remote_ip private_ranges 100.64.0.0/10
+	respond @denied 403
+}
+
 # Internal
+
+int.kvcs.dev {
+	import internal
+	respond "Hello there"
+}
 
 beszel.int.kvcs.dev {
 	import logging beszel
+	import internal
 	reverse_proxy beszel:8090
 }
 
 scrutiny.int.kvcs.dev {
 	import logging scrutiny
+	import internal
 	reverse_proxy scrutiny:8080
 }
 
 speedtest.int.kvcs.dev {
 	import logging speedtest 
+	import internal
 	reverse_proxy speedtest:3000
 }
 
 containers.int.kvcs.dev {
 	import logging containers
+	import internal
 	reverse_proxy portainer:9443 {
 		transport http {
 			tls
@@ -43,21 +61,25 @@ containers.int.kvcs.dev {
 
 syncthing.int.kvcs.dev {
 	import logging syncthing
+	import internal
 	reverse_proxy 192.168.1.130:8384
 }
 
 vault.int.kvcs.dev {
 	import logging vaultwarden
+	import internal
 	reverse_proxy vaultwarden
 }
 
 wud.int.kvcs.dev {
 	import logging whatsupdocker 
+	import internal
 	reverse_proxy wud:3000
 }
 
 cockpit.int.kvcs.dev {
 	import logging cockpit
+	import internal
 	reverse_proxy https://192.168.1.130:9090 {
 		    transport http {
             tls_insecure_skip_verify
@@ -67,37 +89,44 @@ cockpit.int.kvcs.dev {
 
 gallery.int.kvcs.dev {
 	import logging gallery
+	import internal
 	reverse_proxy pigallery2
 }
 
 dns.int.kvcs.dev {
 	import logging adguard
+	import internal
 	reverse_proxy 192.168.1.130:81
 }
 
 # *arr stack
 radarr.int.kvcs.dev {
 	import logging radarr
+	import internal
 	reverse_proxy radarr:7878
 }
 
 sonarr.int.kvcs.dev {
 	import logging sonarr
+	import internal
 	reverse_proxy sonarr:8989
 }
 
 bazarr.int.kvcs.dev {
 	import logging bazarr
+	import internal
 	reverse_proxy bazarr:6767
 }
 
 prowlarr.int.kvcs.dev {
 	import logging prowlarr	
+	import internal
 	reverse_proxy prowlarr:9696
 }
 
 torrents.int.kvcs.dev qb.int.kvcs.dev {
 	import logging torrents
+	import internal
 	reverse_proxy qbittorrent:8080
 }
 
