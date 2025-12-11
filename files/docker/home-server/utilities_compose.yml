@@ -24,7 +24,7 @@ services:
     environment:
       PUID: 1000
       PGID: 1000
-      HOMEPAGE_ALLOWED_HOSTS: home.kovacs.eu.org
+      HOMEPAGE_ALLOWED_HOSTS: home.kovacs.eu.org,home.kvcs.dev
     ports:
       - 3001:3000
     volumes:
@@ -179,11 +179,11 @@ services:
     environment:
       - DEBUG=true
       - ENABLE_SXCU=false
-      - FORCE_HTTPS=true
+      - TRUST_PROXY=true
       - FILE_LISTING=false
     volumes:
       - /mnt/HDD/DockerData/sharex-server:/server/uploads
-    # pull_policy: always
+    pull_policy: always
     restart: unless-stopped
 
 volumes:
