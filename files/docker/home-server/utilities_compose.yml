@@ -183,7 +183,7 @@ services:
       - FILE_LISTING=false
     volumes:
       - /mnt/HDD/DockerData/sharex-server:/server/uploads
-    pull_policy: always
+    # pull_policy: always
     restart: unless-stopped
 
 volumes:
