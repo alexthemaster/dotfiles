@@ -101,6 +101,9 @@ services:
   vaultwarden:
     image: vaultwarden/server:latest
     container_name: vaultwarden
+    env_file: vaultwarden.env
+    environment:
+      - DOMAIN=https://vault.int.kvcs.dev
     volumes:
       - /mnt/HDD/DockerData/VaultWarden:/data/
     ports:
