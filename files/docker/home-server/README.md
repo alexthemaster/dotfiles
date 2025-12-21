@@ -26,6 +26,7 @@
 - OpenSpeedTest [:3002]
 - What's Up Docker [:3003]
 - ShareX Server [:8089]
+- Backrest [:9898]
 
 ## System
 

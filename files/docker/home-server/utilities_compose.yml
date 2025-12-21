@@ -20,7 +20,7 @@ services:
   homepage:
     image: ghcr.io/gethomepage/homepage:latest
     container_name: homepage
-    env_file: homepage.env
+    env_file: env/homepage.env
     environment:
       PUID: 1000
       PGID: 1000
@@ -101,7 +101,7 @@ services:
   vaultwarden:
     image: vaultwarden/server:latest
     container_name: vaultwarden
-    env_file: vaultwarden.env
+    env_file: env/vaultwarden.env
     environment:
       - DOMAIN=https://vault.int.kvcs.dev
     volumes:
@@ -178,7 +178,7 @@ services:
     ports:
       - "8089:8080"
     env_file:
-      - sharex-server.env
+      - env/sharex-server.env
     environment:
       - DEBUG=true
       - ENABLE_SXCU=false
@@ -188,6 +188,26 @@ services:
       - /mnt/HDD/DockerData/sharex-server:/server/uploads
     pull_policy: always
     restart: unless-stopped
+
+  backrest:
+    image: garethgeorge/backrest:latest
+    container_name: backrest
+    hostname: backrest
+    volumes:
+      - /mnt/HDD/DockerData/backrest/data:/data
+      - /mnt/HDD/DockerData/backrest/config:/config
+      - /mnt/HDD/DockerData/backrest/cache:/cache
+      - /mnt/HDD/:/userdata/hdd
+      - /:/userdata/root
+      - ~/.config/rclone:/root/.config/rclone
+    environment:
+      - BACKREST_DATA=/data
+      - BACKREST_CONFIG=/config/config.json
+      - XDG_CACHE_HOME=/cache
+      - TZ=Europe/Bucharest
+    restart: unless-stopped
+    ports:
+      - 9898:9898
 
 volumes:
   portainer:

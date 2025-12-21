@@ -30,6 +30,12 @@ int.kvcs.dev {
 	respond "Hello there"
 }
 
+backup.int.kvcs.dev {
+	import logging backup
+	import internal
+	reverse_proxy backrest:9898
+}
+
 beszel.int.kvcs.dev {
 	import logging beszel
 	import internal
