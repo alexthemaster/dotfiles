@@ -16,7 +16,7 @@
     - `HOMEPAGE_VAR_PORTAINER`: Acess token for Portainer (Found under Account Settings -> Access tokens)
   - `sharex-server.env`:
     - `PASSWORD`: The password that will be used to secure file uploads to ShareX-Server
-  - `vaultwarden.env` (optional): Follow the (SMTP Configuration)[https://github.com/dani-garcia/vaultwarden/wiki/SMTP-Configuration] and (Enabling Mobile Client push notification)[https://github.com/dani-garcia/vaultwarden/wiki/Enabling-Mobile-Client-push-notification] guides
+  - `vaultwarden.env` (optional): Follow the [SMTP Configuration](https://github.com/dani-garcia/vaultwarden/wiki/SMTP-Configuration) and [Enabling Mobile Client push notification](https://github.com/dani-garcia/vaultwarden/wiki/Enabling-Mobile-Client-push-notification) guides
 
 ### Start all script (`./start_all.sh`)
 
