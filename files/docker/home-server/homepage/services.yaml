@@ -176,6 +176,7 @@
         widget:
           type: backrest
           url: https://backup.int.kvcs.dev
+          fields: ["num_success_30","num_failure_30","bytes_added_30"]
 
     - Syncthing:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/syncthing.svg
