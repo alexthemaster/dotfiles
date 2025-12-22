@@ -1,15 +1,4 @@
 - Media:
-    - Plex:
-        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/plex.svg
-        href: https://plex.kovacs.eu.org
-        server: server
-        container: plex
-        widget:
-          type: plex
-          url: https://192.168.1.130:32400
-          key: {{HOMEPAGE_VAR_PLEX}}
-          fields: ["streams", "movies", "tv"]
-
     - Jellyfin:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/jellyfin.svg
         description: Media server for managing and streaming movies and TV shows

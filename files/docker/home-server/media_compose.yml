@@ -1,20 +1,5 @@
 name: Media
 services:
-  plex:
-    image: linuxserver/plex:latest
-    container_name: plex
-    network_mode: host
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - VERSION=docker
-    volumes:
-      - plex:/config
-      - /mnt/HDD/Sorted/TV Shows/:/tv
-      - /mnt/HDD/Sorted/Movies:/movies
-    pull_policy: always
-    restart: unless-stopped
-
   jellyfin:
     image: jellyfin/jellyfin
     container_name: jellyfin
