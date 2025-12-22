@@ -12,6 +12,7 @@
 
     - Jellyfin:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/jellyfin.svg
+        description: Media server for managing and streaming movies and TV shows
         href: https://jellyfin.kvcs.dev
         server: server
         container: jellyfin
@@ -27,6 +28,7 @@
 
     - Audiobookshelf:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/audiobookshelf.svg
+        description: Self-hosted audiobook and podcast server
         href: https://audiobooks.kovacs.eu.org
         server: server
         container: audiobookshelf
@@ -37,6 +39,7 @@
 
     - qBittorrent:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/qbittorrent.svg
+        description: Torrent client with a web interface for downloading content
         href: https://torrents.int.kvcs.dev
         server: server
         container: qbittorrent
@@ -48,6 +51,7 @@
 
     - Sonarr:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/sonarr-radarr-light.svg
+        description: Automated TV series management and downloading tool
         href: https://sonarr.int.kvcs.dev
         server: server
         container: sonarr
@@ -58,6 +62,7 @@
 
     - Radarr:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/radarr.svg
+        description: Automated movie management and downloading tool
         href: https://radarr.int.kvcs.dev
         server: server
         container: radarr
@@ -68,6 +73,7 @@
 
     - Bazarr:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/bazarr-light.svg
+        description: Subtitle management and downloader for Sonarr and Radarr
         href: https://bazarr.int.kvcs.dev
         server: server
         container: bazarr
@@ -78,6 +84,7 @@
 
     - Prowlarr:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/prowlarr-radarr-light.svg
+        description: Indexer manager that integrates with Sonarr and Radarr
         href: https://prowlarr.int.kvcs.dev
         server: server
         container: prowlarr
@@ -88,6 +95,7 @@
 
     - Gallery:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/pigallery2-light.svg
+        description: Web-based photo gallery for browsing image collections
         href: https://gallery.int.kvcs.dev
         server: server
         container: pigallery2
@@ -95,6 +103,7 @@
 - Utilities:
     - Caddy:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/caddy.svg
+        description: Web server and reverse proxy
         server: server
         container: caddy
         widget:
@@ -103,6 +112,7 @@
 
     - AdGuard Home:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/adguard-home.svg
+        description: DNS server for ad and tracker blocking
         href: https://dns.int.kvcs.dev
         server: server
         container: adguardhome
@@ -112,6 +122,7 @@
 
     - Beszel:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/beszel.svg
+        description: Lightweight server and system monitoring dashboard
         href: https://beszel.int.kvcs.dev
         server: server
         container: beszel
@@ -137,6 +148,7 @@
 
     - Portainer:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/portainer-v1.svg
+        description: Web UI for managing Docker containers and environments
         href: https://containers.int.kvcs.dev
         server: server
         container: portainer
@@ -148,6 +160,7 @@
 
     - What's Up Docker:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/wud.svg
+        description: Monitors Docker containers for available image updates
         href: https://wud.int.kvcs.dev
         server: server
         container: wud
@@ -157,6 +170,7 @@
 
     - Scrutiny:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/scrutiny.svg
+        description: Disk health monitoring using S.M.A.R.T. data
         href: https://scrutiny.int.kvcs.dev
         server: server
         container: scrutiny
@@ -166,6 +180,7 @@
 
     - Backrest:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/backrest-light.svg
+        description: Web UI for managing Restic-based backups
         href: https://backup.int.kvcs.dev
         server: server
         container: backrest
@@ -175,18 +190,21 @@
 
     - Syncthing:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/syncthing.svg
+        description: Peer-to-peer file synchronization across devices
         href: https://syncthing.int.kvcs.dev
         server: server
         container: syncthing
 
     - File Browser:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/filebrowser-quantum.svg
+        description: Web-based file manager for browsing, editing and sharing files
         href: https://files.kovacs.eu.org
         server: server
         container: file-browser
 
     - ShareX Server:
         icon: https://getsharex.com/img/ShareX_Logo.svg
+        description: Self-hosted upload server for ShareX screenshots and files
         href: https://sx.kvcs.dev
         server: server
         container: sharex-server
@@ -194,6 +212,7 @@
 - External:
     - Uptime Kuma:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/uptime-kuma.svg
+        description: Service monitoring tool for tracking uptime and availability
         href: https://uptime.spolai.eu
         widget:
           type: uptimekuma
