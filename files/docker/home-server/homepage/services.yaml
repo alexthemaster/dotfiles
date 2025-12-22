@@ -164,6 +164,15 @@
           type: scrutiny
           url: https://scrutiny.int.kvcs.dev
 
+    - Backrest:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/backrest-light.svg
+        href: https://backup.int.kvcs.dev
+        server: server
+        container: backrest
+        widget:
+          type: backrest
+          url: https://backup.int.kvcs.dev
+
     - Syncthing:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/syncthing.svg
         href: https://syncthing.int.kvcs.dev
