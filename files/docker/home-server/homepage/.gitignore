@@ -4,4 +4,6 @@
 !widgets.yaml
 !bookmarks.yaml
 !settings.yaml
+!custom.js
+!custom.css
 !.gitignore

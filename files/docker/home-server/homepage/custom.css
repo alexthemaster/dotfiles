@@ -1,0 +1,14 @@
+#disableButton {
+    font-size: 0.7em;
+    /* Ensure text is on next row */
+    padding-right: 200px;
+    user-select: none;
+}
+
+.disabled {
+    display: none;
+}
+
+#disableButton:hover {
+    cursor: pointer;
+}
