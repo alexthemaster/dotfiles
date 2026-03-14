@@ -25,8 +25,6 @@ services:
       PUID: 1000
       PGID: 1000
       HOMEPAGE_ALLOWED_HOSTS: home.kovacs.eu.org,home.kvcs.dev
-    ports:
-      - 3001:3000
     volumes:
       - /home/alex/dotfiles/files/docker/home-server/homepage:/app/config
       - /mnt/HDD/:/HDD
@@ -44,8 +42,6 @@ services:
       - SERVICES=1 # Allow access to viewing services (necessary when using Docker Swarm)
       - TASKS=1 # Allow access to viewing tasks (necessary when using Docker Swarm)
       - POST=0 # Disallow any POST operations (effectively read-only)
-    ports:
-      - 2375:2375
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro # Mounted as read-only
     pull_policy: always
@@ -55,9 +51,6 @@ services:
     image: portainer/portainer-ce:latest
     container_name: portainer
     command: -H tcp://portainer_agent:9001 --tlsskipverify
-    ports:
-      - 9000:9000
-      - 9443:9443
     volumes:
       - portainer:/data
     pull_policy: always
@@ -66,8 +59,6 @@ services:
       - portainer_agent
 
   portainer_agent:
-    ports:
-      - 9001:9001
     container_name: portainer_agent
     restart: unless-stopped
     volumes:
@@ -79,8 +70,6 @@ services:
   file-browser:
     image: gtstef/filebrowser
     container_name: file-browser
-    ports:
-      - 8112:80
     volumes:
       - /mnt/HDD/DockerData/filebrowser:/home/filebrowser/data
       - /mnt/HDD/DockerData/filebrowser/database.db:/database.db
@@ -91,8 +80,6 @@ services:
   beszel:
     image: henrygd/beszel
     container_name: beszel
-    ports:
-      - 8090:8090
     volumes:
       - beszel:/beszel_data
     pull_policy: always
@@ -142,9 +129,6 @@ services:
     cap_add:
       - SYS_RAWIO
       - SYS_ADMIN
-    ports:
-      - "8081:8080" # webapp
-      - "8086:8086" # influxDB admin
     volumes:
       - /run/udev:/run/udev:ro
       - /mnt/HDD/DockerData/scrutiny/config:/opt/scrutiny/config
@@ -158,8 +142,6 @@ services:
   speedtest:
     image: openspeedtest/latest
     container_name: speedtest
-    ports:
-      - "3002:3000"
     pull_policy: always
     restart: unless-stopped
 
@@ -168,15 +150,11 @@ services:
     container_name: wud
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    ports:
-      - 3003:3000
 
   sharex-server:
     image: alexthemaster/sharex-server:latest
     container_name: sharex-server
     user: 1000:1000
-    ports:
-      - "8089:8080"
     env_file:
       - env/sharex-server.env
     environment:
@@ -206,8 +184,6 @@ services:
       - XDG_CACHE_HOME=/cache
       - TZ=Europe/Bucharest
     restart: unless-stopped
-    ports:
-      - 9898:9898
 
 volumes:
   portainer:

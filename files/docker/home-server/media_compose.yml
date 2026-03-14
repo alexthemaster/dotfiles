@@ -9,7 +9,6 @@ services:
     devices:
       - /dev/dri/renderD128:/dev/dri/renderD128
     ports:
-      - 8096:8096/tcp
       - 7359:7359/udp
     volumes:
       - /mnt/HDD/DockerData/jellyfin:/config
@@ -31,7 +30,6 @@ services:
       - /mnt/HDD:/hdd
       - ./vuetorrent:/vuetorrent
     ports:
-      - 8080:8080
       - 6881:6881
       - 6881:6881/udp
     pull_policy: always
@@ -45,8 +43,6 @@ services:
       - PGID=1000
     volumes:
       - prowlarr:/config
-    ports:
-      - 9696:9696
     pull_policy: always
     restart: unless-stopped
 
@@ -59,8 +55,6 @@ services:
     volumes:
       - sonarr:/config
       - /mnt/HDD:/hdd
-    ports:
-      - 8989:8989
     pull_policy: always
     restart: unless-stopped
     depends_on:
@@ -76,8 +70,6 @@ services:
     volumes:
       - radarr:/config
       - /mnt/HDD:/hdd
-    ports:
-      - 7878:7878
     pull_policy: always
     restart: unless-stopped
     depends_on:
@@ -93,8 +85,6 @@ services:
     volumes:
       - bazarr:/config
       - /mnt/HDD:/hdd
-    ports:
-      - 6767:6767
     pull_policy: always
     restart: unless-stopped
     depends_on:
@@ -104,8 +94,6 @@ services:
   navidrome:
     image: deluan/navidrome:latest
     container_name: navidrome
-    ports:
-      - "4533:4533"
     volumes:
       - navidrome:/data
       - "/mnt/HDD/Music:/music:ro"
@@ -115,8 +103,6 @@ services:
   audiobookshelf:
     image: ghcr.io/advplyr/audiobookshelf:latest
     container_name: audiobookshelf
-    ports:
-      - 13378:80
     volumes:
       - /mnt/HDD/Audiobooks:/audiobooks
       - audiobookshelf:/config
@@ -139,8 +125,6 @@ services:
       - pigallery2:/app/data/db
       - /mnt/HDD/Photos:/app/data/images:ro
       - /mnt/HDD/DockerData/pigallery2/tmp:/app/data/tmp
-    ports:
-      - 8087:80
     pull_policy: always
     restart: always
 
