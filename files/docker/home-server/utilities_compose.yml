@@ -47,25 +47,13 @@ services:
     pull_policy: always
     restart: unless-stopped
 
-  portainer:
-    image: portainer/portainer-ce:latest
-    container_name: portainer
-    command: -H tcp://portainer_agent:9001 --tlsskipverify
-    volumes:
-      - portainer:/data
-    pull_policy: always
-    restart: unless-stopped
-    depends_on:
-      - portainer_agent
-
-  portainer_agent:
-    container_name: portainer_agent
+  dockhand:
+    image: fnsys/dockhand:latest
+    container_name: dockhand
     restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /var/lib/docker/volumes:/var/lib/docker/volumes
-      - /:/host
-    image: portainer/agent:latest
+      - /mnt/HDD/DockerData/dockhand:/app/data
 
   file-browser:
     image: gtstef/filebrowser
@@ -93,8 +81,6 @@ services:
       - DOMAIN=https://vault.int.kvcs.dev
     volumes:
       - /mnt/HDD/DockerData/VaultWarden:/data/
-    ports:
-      - 8088:80
     pull_policy: always
     restart: unless-stopped
 
