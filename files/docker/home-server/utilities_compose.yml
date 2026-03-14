@@ -185,6 +185,14 @@ services:
       - TZ=Europe/Bucharest
     restart: unless-stopped
 
+  authelia:
+    container_name: authelia
+    user: 1000:1000
+    image: 'docker.io/authelia/authelia:latest'
+    restart: 'unless-stopped'
+    volumes:
+      - '/mnt/HDD/DockerData/authelia:/config'
+
 volumes:
   portainer:
   caddy_data:

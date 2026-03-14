@@ -107,7 +107,7 @@
         container: adguardhome
         widget:
           type: adguard
-          url: https://dns.int.kvcs.dev
+          url: http://192.168.1.130:81
 
     - Beszel:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/beszel.svg
@@ -117,19 +117,19 @@
         container: beszel
         widgets:
         - type: beszel
-          url: https://beszel.int.kvcs.dev
+          url: http://beszel:8090
           username: alex@kvcs.dev
           password: {{HOMEPAGE_VAR_BESZEL_PASS}}
           systemId: gxrsxd9zti4ibnl
           version: 2
         - type: beszel
-          url: https://beszel.int.kvcs.dev
+          url: http://beszel:8090
           username: alex@kvcs.dev
           password: {{HOMEPAGE_VAR_BESZEL_PASS}}
           systemId: w4mdf29x7tjtv30
           version: 2
         - type: beszel
-          url: https://beszel.int.kvcs.dev
+          url: http://beszel:8090
           username: alex@kvcs.dev
           password: {{HOMEPAGE_VAR_BESZEL_PASS}}
           systemId: uwy785ed0qr1wrm
@@ -165,7 +165,7 @@
         container: scrutiny
         widget:
           type: scrutiny
-          url: https://scrutiny.int.kvcs.dev
+          url: http://scrutiny:8080
 
     - Backrest:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/backrest-light.svg
@@ -175,7 +175,7 @@
         container: backrest
         widget:
           type: backrest
-          url: https://backup.int.kvcs.dev
+          url: http://backrest:9898
           fields: ["num_success_30","num_failure_30","bytes_added_30"]
 
     - Syncthing:
