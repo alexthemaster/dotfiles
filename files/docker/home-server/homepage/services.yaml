@@ -135,17 +135,19 @@
           systemId: uwy785ed0qr1wrm
           version: 2
 
-    - Portainer:
-        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/portainer-v1.svg
+    - Dockhand:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/dockhand.png
         description: Web UI for managing Docker containers and environments
         href: https://containers.int.kvcs.dev
         server: server
-        container: portainer
+        container: dockhand
         widget:
-          type: portainer
-          url: https://portainer:9443
-          env: 6
-          key: {{HOMEPAGE_VAR_PORTAINER}}
+          type: dockhand
+          url: http://dockhand:3000
+          environment: local
+          username:
+          password:
+          fields: ["images","volumes","events_today","pending_updates"]
 
     - What's Up Docker:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/wud.svg
