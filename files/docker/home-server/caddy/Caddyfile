@@ -71,12 +71,7 @@ speedtest.int.kvcs.dev {
 containers.int.kvcs.dev {
 	import logging containers
 	import internal_auth
-	reverse_proxy portainer:9443 {
-		transport http {
-			tls
-			tls_insecure_skip_verify
-		}
-	}
+	reverse_proxy dockhand:3000
 }
 
 syncthing.int.kvcs.dev {
